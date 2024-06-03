@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Item\ItemProprio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Item\ItemFuncio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Item\ItemCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Item\ItemPaga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Proprio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pagamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Movimentacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Funcionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>
