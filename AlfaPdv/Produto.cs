@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AlfaPdv.Classes;
+using AlfaPdv.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +19,8 @@ namespace AlfaPdv
             InitializeComponent();
             comboBox1.SelectedIndex = 0;
             InitializeButton();
-
+            InitializeDVGProd();
+            
         }
 
         private void InitializeButton()
@@ -52,6 +55,21 @@ namespace AlfaPdv
             InicioForm.Show();
              
         }
-       
+       private async void InitializeDVGProd()
+        {
+            VerProd verProd = new VerProd();
+            try
+            {
+                ProdServices VerProd = new ProdServices();
+
+                List<VerProd> data = await VerProd.Produ();
+                dgvProd.DataSource = data;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter os dados: " + ex.Message);
+            }
+        }
     }
 }

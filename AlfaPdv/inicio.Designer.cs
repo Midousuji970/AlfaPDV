@@ -31,7 +31,7 @@
             btnProd = new Button();
             btnCli = new Button();
             btnFun = new Button();
-            button4 = new Button();
+            btnSessao = new Button();
             button5 = new Button();
             button6 = new Button();
             button7 = new Button();
@@ -72,14 +72,15 @@
             btnFun.Text = "Funcionario";
             btnFun.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnSessao
             // 
-            button4.Location = new Point(577, 236);
-            button4.Name = "button4";
-            button4.Size = new Size(117, 52);
-            button4.TabIndex = 3;
-            button4.Text = "Iniciar Sessão";
-            button4.UseVisualStyleBackColor = true;
+            btnSessao.Location = new Point(577, 236);
+            btnSessao.Name = "btnSessao";
+            btnSessao.Size = new Size(117, 52);
+            btnSessao.TabIndex = 3;
+            btnSessao.Text = "Iniciar Sessão";
+            btnSessao.UseVisualStyleBackColor = true;
+            btnSessao.Click += btnSessao_Click;
             // 
             // button5
             // 
@@ -184,7 +185,7 @@
             Controls.Add(button7);
             Controls.Add(button6);
             Controls.Add(button5);
-            Controls.Add(button4);
+            Controls.Add(btnSessao);
             Controls.Add(btnFun);
             Controls.Add(btnCli);
             Controls.Add(btnProd);
@@ -201,7 +202,7 @@
         private Button btnProd;
         private Button btnCli;
         private Button btnFun;
-        private Button button4;
+        private Button btnSessao;
         private Button button5;
         private Button button6;
         private Button button7;

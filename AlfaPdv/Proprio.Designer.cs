@@ -1,4 +1,6 @@
-﻿namespace AlfaPdv
+﻿using System.Windows.Forms;
+
+namespace AlfaPdv
 {
     partial class Proprio
     {
@@ -28,7 +30,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            dgvPro = new DataGridView();
             textBox1 = new TextBox();
             comboBox1 = new ComboBox();
             button1 = new Button();
@@ -36,17 +39,39 @@
             button2 = new Button();
             button4 = new Button();
             button5 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPro).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvPro
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(60, 139);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1139, 490);
-            dataGridView1.TabIndex = 0;
+            dgvPro.AllowUserToAddRows = false;
+            dgvPro.AllowUserToDeleteRows = false;
+            dgvPro.AllowUserToResizeColumns = false;
+            dgvPro.AllowUserToResizeRows = false;
+            dgvPro.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvPro.BackgroundColor = Color.FromArgb(46, 51, 73);
+            dgvPro.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(46, 51, 73);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(80, 56, 80);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvPro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvPro.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPro.GridColor = Color.White;
+            dgvPro.Location = new Point(60, 139);
+            dgvPro.MultiSelect = false;
+            dgvPro.Name = "dgvPro";
+            dgvPro.ReadOnly = true;
+            dgvPro.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvPro.RowHeadersVisible = false;
+            dgvPro.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvPro.RowTemplate.Height = 25;
+            dgvPro.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvPro.Size = new Size(1139, 490);
+            dgvPro.TabIndex = 0;
             // 
             // textBox1
             // 
@@ -57,6 +82,7 @@
             // 
             // comboBox1
             // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Codigo", "Descriçao", "Preço", "Estoque" });
             comboBox1.Location = new Point(60, 110);
@@ -125,17 +151,17 @@
             Controls.Add(button1);
             Controls.Add(comboBox1);
             Controls.Add(textBox1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvPro);
             Name = "Proprio";
             Text = "AlfaPDV";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPro).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgvPro;
         private TextBox textBox1;
         private ComboBox comboBox1;
         private Button button1;

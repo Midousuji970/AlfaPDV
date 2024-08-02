@@ -1,4 +1,6 @@
-﻿namespace AlfaPdv
+﻿using System.Windows.Forms;
+
+namespace AlfaPdv
 {
     partial class Produto
     {
@@ -28,28 +30,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            dgvProd = new DataGridView();
             textBox1 = new TextBox();
             comboBox1 = new ComboBox();
             bntVoltaIni = new Button();
             label1 = new Label();
-            button2 = new Button();
             button3 = new Button();
             button4 = new Button();
             button5 = new Button();
             pnlCadProd = new Panel();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProd).BeginInit();
+            pnlCadProd.SuspendLayout();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvProd
             // 
-            dataGridView1.BackgroundColor = Color.FromArgb(46, 51, 73);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(60, 139);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1139, 490);
-            dataGridView1.TabIndex = 0;
+            dgvProd.AllowUserToAddRows = false;
+            dgvProd.AllowUserToDeleteRows = false;
+            dgvProd.AllowUserToResizeColumns = false;
+            dgvProd.AllowUserToResizeRows = false;
+            dgvProd.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvProd.BackgroundColor = Color.FromArgb(46, 51, 73);
+            dgvProd.BorderStyle = BorderStyle.None;
+            dgvProd.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(46, 51, 73);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(80, 56, 80);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dgvProd.DefaultCellStyle = dataGridViewCellStyle1;
+            dgvProd.GridColor = Color.White;
+            dgvProd.Location = new Point(60, 139);
+            dgvProd.MultiSelect = false;
+            dgvProd.Name = "dgvProd";
+            dgvProd.ReadOnly = true;
+            dgvProd.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvProd.RowHeadersVisible = false;
+            dgvProd.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvProd.RowTemplate.Height = 25;
+            dgvProd.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProd.Size = new Size(1139, 490);
+            dgvProd.TabIndex = 0;
             // 
             // textBox1
             // 
@@ -89,18 +113,9 @@
             label1.TabIndex = 10;
             label1.Text = "Cadastro de Produtos";
             // 
-            // button2
-            // 
-            button2.Location = new Point(1094, 62);
-            button2.Name = "button2";
-            button2.Size = new Size(105, 42);
-            button2.TabIndex = 11;
-            button2.Text = "Desmarcar";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
-            button3.Location = new Point(983, 63);
+            button3.Location = new Point(1094, 62);
             button3.Name = "button3";
             button3.Size = new Size(105, 42);
             button3.TabIndex = 12;
@@ -109,7 +124,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(872, 62);
+            button4.Location = new Point(983, 62);
             button4.Name = "button4";
             button4.Size = new Size(105, 42);
             button4.TabIndex = 13;
@@ -118,7 +133,7 @@
             // 
             // button5
             // 
-            button5.Location = new Point(761, 63);
+            button5.Location = new Point(872, 62);
             button5.Name = "button5";
             button5.Size = new Size(105, 42);
             button5.TabIndex = 14;
@@ -127,6 +142,9 @@
             // 
             // pnlCadProd
             // 
+            pnlCadProd.Controls.Add(button5);
+            pnlCadProd.Controls.Add(button3);
+            pnlCadProd.Controls.Add(button4);
             pnlCadProd.Dock = DockStyle.Fill;
             pnlCadProd.Location = new Point(0, 0);
             pnlCadProd.Name = "pnlCadProd";
@@ -139,31 +157,27 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(1264, 681);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
             Controls.Add(label1);
             Controls.Add(bntVoltaIni);
             Controls.Add(comboBox1);
             Controls.Add(textBox1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvProd);
             Controls.Add(pnlCadProd);
             Name = "Produto";
             Text = "Produto";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProd).EndInit();
+            pnlCadProd.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgvProd;
         private TextBox textBox1;
         private ComboBox comboBox1;
         private Button bntVoltaIni;
         private Label label1;
-        private Button button2;
         private Button button3;
         private Button button4;
         private Button button5;

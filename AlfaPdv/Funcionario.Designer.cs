@@ -34,12 +34,12 @@
             comboBox1 = new ComboBox();
             btnVoltaIni = new Button();
             label1 = new Label();
-            button2 = new Button();
-            button3 = new Button();
+            btnFunEra = new Button();
             btnFunAlt = new Button();
             btnFunAdi = new Button();
             pnlCadFun = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvFun).BeginInit();
+            pnlCadFun.SuspendLayout();
             SuspendLayout();
             // 
             // dgvFun
@@ -82,6 +82,7 @@
             // 
             // comboBox1
             // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Codigo", "Descriçao", "Preço", "Estoque" });
             comboBox1.Location = new Point(60, 110);
@@ -111,27 +112,19 @@
             label1.TabIndex = 10;
             label1.Text = "Cadastro de Funcionario";
             // 
-            // button2
+            // btnFunEra
             // 
-            button2.Location = new Point(1094, 62);
-            button2.Name = "button2";
-            button2.Size = new Size(105, 42);
-            button2.TabIndex = 11;
-            button2.Text = "Desmarcar";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(983, 63);
-            button3.Name = "button3";
-            button3.Size = new Size(105, 42);
-            button3.TabIndex = 12;
-            button3.Text = "Apagar";
-            button3.UseVisualStyleBackColor = true;
+            btnFunEra.Location = new Point(1093, 61);
+            btnFunEra.Name = "btnFunEra";
+            btnFunEra.Size = new Size(105, 42);
+            btnFunEra.TabIndex = 12;
+            btnFunEra.Text = "Apagar";
+            btnFunEra.UseVisualStyleBackColor = true;
+            btnFunEra.Click += btnFunEra_Click;
             // 
             // btnFunAlt
             // 
-            btnFunAlt.Location = new Point(872, 62);
+            btnFunAlt.Location = new Point(982, 61);
             btnFunAlt.Name = "btnFunAlt";
             btnFunAlt.Size = new Size(105, 42);
             btnFunAlt.TabIndex = 13;
@@ -140,7 +133,7 @@
             // 
             // btnFunAdi
             // 
-            btnFunAdi.Location = new Point(761, 63);
+            btnFunAdi.Location = new Point(871, 61);
             btnFunAdi.Name = "btnFunAdi";
             btnFunAdi.Size = new Size(105, 42);
             btnFunAdi.TabIndex = 14;
@@ -150,6 +143,9 @@
             // pnlCadFun
             // 
             pnlCadFun.BorderStyle = BorderStyle.FixedSingle;
+            pnlCadFun.Controls.Add(btnFunAdi);
+            pnlCadFun.Controls.Add(btnFunEra);
+            pnlCadFun.Controls.Add(btnFunAlt);
             pnlCadFun.Dock = DockStyle.Fill;
             pnlCadFun.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             pnlCadFun.ForeColor = SystemColors.ControlText;
@@ -164,10 +160,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(1264, 681);
-            Controls.Add(btnFunAdi);
-            Controls.Add(btnFunAlt);
-            Controls.Add(button3);
-            Controls.Add(button2);
             Controls.Add(label1);
             Controls.Add(btnVoltaIni);
             Controls.Add(comboBox1);
@@ -177,6 +169,7 @@
             Name = "Funcionario";
             Text = "Produto";
             ((System.ComponentModel.ISupportInitialize)dgvFun).EndInit();
+            pnlCadFun.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -188,8 +181,7 @@
         private ComboBox comboBox1;
         private Button btnVoltaIni;
         private Label label1;
-        private Button button2;
-        private Button button3;
+        private Button btnFunEra;
         private Button btnFunAlt;
         private Button btnFunAdi;
         private Panel pnlCadFun;

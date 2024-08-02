@@ -1,10 +1,12 @@
 ﻿using AlfaPdv.Classes;
 using AlfaPdv.Services;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Resources;
 using System.Security.Cryptography.X509Certificates;
@@ -31,6 +33,8 @@ namespace AlfaPdv
             btnVoltaIni.Click += new EventHandler(btnVoltaIni_Click);
             btnFunAdi.Click += new EventHandler(btnFunAdi_Click);
             btnFunAlt.Click += new EventHandler(btnFunAlt_Click);
+            btnFunEra.Click += new EventHandler(btnFunEra_Click);
+
 
         }
         private async void InitializeDVG()
@@ -54,11 +58,18 @@ namespace AlfaPdv
         {
             LoadIniForm();
         }
-        private void btnFunAdi_Click(object sender, EventArgs e) {
+        private void btnFunAdi_Click(object sender, EventArgs e)
+        {
             LoadAdiForm();
         }
-        private void btnFunAlt_Click(object sender, EventArgs e) {
+        private void btnFunAlt_Click(object sender, EventArgs e)
+        {
             LoadAltForm();
+
+        }
+        private void btnFunEra_Click(object sender, EventArgs e)
+        {
+            DeleteItem();
         }
 
         private void LoadIniForm()
@@ -84,12 +95,13 @@ namespace AlfaPdv
         }
 
         private void LoadAdiForm()
-            
+
         {
             int ultimaLinha = dgvFun.Rows.Count - 1;
             dgvFun.Rows[ultimaLinha].Selected = true;
             if (dgvFun.SelectedRows.Count > 0)
             {
+
                 // Obtém a última linha selecionada
                 DataGridViewRow selectedRow = dgvFun.SelectedRows[dgvFun.SelectedRows.Count - 1];
 
@@ -97,46 +109,9 @@ namespace AlfaPdv
                 int ultId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
                 int newId = ultId + 1;
                 Envio.Verifica = 0;
+
                 Envio.Fun = newId;
-            } 
-                foreach (Control control in this.Controls)
-                {
-                    if (control != pnlCadFun)
-                    {
-                        control.Visible = false;
-                    }
-                }
-
-                pnlCadFun.Controls.Clear();
-
-                AlfaPdv.Item.ItemFun ItemFunForm = new AlfaPdv.Item.ItemFun();
-
-                ItemFunForm.TopLevel = false;
-                ItemFunForm.FormBorderStyle = FormBorderStyle.None;
-                ItemFunForm.Dock = DockStyle.Fill;
-                pnlCadFun.Controls.Add(ItemFunForm);
-                ItemFunForm.Show();
-
-            
-            
-           
-
-        }
-        private void LoadAltForm()
-        {
-            if (dgvFun.SelectedRows.Count > 0) {
-             
-            DataGridViewRow selectedRow = dgvFun.SelectedRows[0];
-            int id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
-            string nome = selectedRow.Cells["Nome"].Value.ToString();
-            string cargo = selectedRow.Cells["Cargo"].Value.ToString();
-            int verifica = 1;
-
-            Envio.Fun = id;
-            Envio.FunNome = nome;
-            Envio.FunCargo = cargo; 
-            Envio.Verifica = verifica;
-
+            }
             foreach (Control control in this.Controls)
             {
                 if (control != pnlCadFun)
@@ -154,12 +129,111 @@ namespace AlfaPdv
             ItemFunForm.Dock = DockStyle.Fill;
             pnlCadFun.Controls.Add(ItemFunForm);
             ItemFunForm.Show();
+
+
+
+
+
+        }
+        private async Task FunFull(int id)
+        {
+
+            FunCompleto funCompleto = new FunCompleto();
+            try
+            {
+
+                FunServices FunCompleto = new FunServices();
+                FunCompleto dataCompleto = await FunCompleto.FunFullIntegra(id);
+
+                Envio.FunNome = dataCompleto.Nome;
+                Envio.FunCpf = dataCompleto.Cpf;
+                Envio.Ende = dataCompleto.Ende;
+                Envio.Cep = dataCompleto.Cep;
+                Envio.Num = dataCompleto.Numero;
+                Envio.FunCargo = dataCompleto.Cargo;
+                Envio.Tele = dataCompleto.Tel; // Atribua o valor do telefone a Envio.Tele
+                Envio.Email = dataCompleto.Email;
+                Envio.Datas = dataCompleto.Datas;
+
+            }
+            catch (Exception ex) { }
+
+
+        }
+        
+        private async void LoadAltForm()
+        {
+            if (dgvFun.SelectedRows.Count > 0)
+            {
+
+                DataGridViewRow selectedRow = dgvFun.SelectedRows[0];
+                int id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                Envio.Fun = id;
+                int verifica = 1;
+                await FunFull(id);
+                var teste = 0;
+                if (teste != 1)
+                {
+
+                    Envio.Verifica = verifica;
+
+                    foreach (Control control in this.Controls)
+                    {
+                        if (control != pnlCadFun)
+                        {
+                            control.Visible = false;
+                        }
+                    }
+
+                    pnlCadFun.Controls.Clear();
+
+                    AlfaPdv.Item.ItemFun ItemFunForm = new AlfaPdv.Item.ItemFun();
+
+                    ItemFunForm.TopLevel = false;
+                    ItemFunForm.FormBorderStyle = FormBorderStyle.None;
+                    ItemFunForm.Dock = DockStyle.Fill;
+                    pnlCadFun.Controls.Add(ItemFunForm);
+                    ItemFunForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Selecione um Funcionario!");
+                }
+
+            }
+
+
+        }
+        private async void DeleteItem()
+        {
+            if (dgvFun.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvFun.SelectedRows[0];
+                int id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                string nome = Convert.ToString(selectedRow.Cells["nome"].Value);
+
+                FunServices funServices = new FunServices();
+                try
+                {
+                    await funServices.Remover(id, nome);
+                    
+                    ReiniDGV();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao remover funcionário: {ex.Message}");
+                }
             }
             else
             {
-                MessageBox.Show("Selecione um Funcionario!");
+                MessageBox.Show("Selecione um funcionário para remover.");
             }
-
         }
+
+        private void ReiniDGV()
+        {
+            InitializeDVG();
+        }
+
     }
 }

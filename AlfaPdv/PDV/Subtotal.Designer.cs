@@ -32,36 +32,38 @@
             panel1 = new Panel();
             panel3 = new Panel();
             panel2 = new Panel();
+            panel9 = new Panel();
             panel5 = new Panel();
             panel6 = new Panel();
             panel7 = new Panel();
             panel8 = new Panel();
             label1 = new Label();
-            textBox1 = new TextBox();
-            dataGridView1 = new DataGridView();
-            button1 = new Button();
+            dgvPes = new DataGridView();
+            btnCanItem = new Button();
             button2 = new Button();
-            button3 = new Button();
+            btnFimVenda = new Button();
             button5 = new Button();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            label5 = new Label();
+            lbTotal = new Label();
             label6 = new Label();
-            button4 = new Button();
+            btnFimSessao = new Button();
             button6 = new Button();
             button7 = new Button();
             button8 = new Button();
-            panel9 = new Panel();
             panel10 = new Panel();
             pictureBox1 = new PictureBox();
             label7 = new Label();
+            pnlSub = new Panel();
+            mtxtPes = new MaskedTextBox();
             panel4.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pnlSub.SuspendLayout();
             SuspendLayout();
             // 
             // panel4
@@ -97,6 +99,14 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1278, 10);
             panel2.TabIndex = 2;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.FromArgb(46, 51, 73);
+            panel9.Location = new Point(0, 0);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(1278, 10);
+            panel9.TabIndex = 3;
             // 
             // panel5
             // 
@@ -142,30 +152,27 @@
             label1.TabIndex = 7;
             label1.Text = "Digite o Produto:";
             // 
-            // textBox1
+            // dgvPes
             // 
-            textBox1.Location = new Point(336, 46);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(906, 23);
-            textBox1.TabIndex = 8;
+            dgvPes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvPes.BackgroundColor = SystemColors.Control;
+            dgvPes.BorderStyle = BorderStyle.None;
+            dgvPes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPes.Location = new Point(336, 122);
+            dgvPes.Name = "dgvPes";
+            dgvPes.ReadOnly = true;
+            dgvPes.RowTemplate.Height = 25;
+            dgvPes.Size = new Size(906, 483);
+            dgvPes.TabIndex = 9;
             // 
-            // dataGridView1
+            // btnCanItem
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(336, 101);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(906, 502);
-            dataGridView1.TabIndex = 9;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(15, 546);
-            button1.Name = "button1";
-            button1.Size = new Size(66, 59);
-            button1.TabIndex = 10;
-            button1.Text = "Cancelar Item\r\n(F1)";
-            button1.UseVisualStyleBackColor = true;
+            btnCanItem.Location = new Point(15, 546);
+            btnCanItem.Name = "btnCanItem";
+            btnCanItem.Size = new Size(66, 59);
+            btnCanItem.TabIndex = 10;
+            btnCanItem.Text = "Cancelar Item\r\n(F1)";
+            btnCanItem.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -176,14 +183,14 @@
             button2.Text = "Consultar Produto\r\n(F2)";
             button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnFimVenda
             // 
-            button3.Location = new Point(231, 546);
-            button3.Name = "button3";
-            button3.Size = new Size(66, 57);
-            button3.TabIndex = 12;
-            button3.Text = "Finalizar Venda\r\n(F4)";
-            button3.UseVisualStyleBackColor = true;
+            btnFimVenda.Location = new Point(231, 546);
+            btnFimVenda.Name = "btnFimVenda";
+            btnFimVenda.Size = new Size(66, 57);
+            btnFimVenda.TabIndex = 12;
+            btnFimVenda.Text = "Finalizar Venda\r\n(F4)";
+            btnFimVenda.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -209,7 +216,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(46, 51, 73);
-            label3.Location = new Point(391, 69);
+            label3.Location = new Point(392, 90);
             label3.Name = "label3";
             label3.Size = new Size(223, 29);
             label3.TabIndex = 16;
@@ -220,41 +227,43 @@
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.FromArgb(46, 51, 73);
-            label4.Location = new Point(785, 69);
+            label4.Location = new Point(784, 90);
             label4.Name = "label4";
             label4.Size = new Size(152, 29);
             label4.TabIndex = 17;
             label4.Text = "Quantidade:";
             // 
-            // label5
+            // lbTotal
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(1097, 606);
-            label5.Name = "label5";
-            label5.Size = new Size(145, 56);
-            label5.TabIndex = 18;
-            label5.Text = "00.00";
+            lbTotal.AutoSize = true;
+            lbTotal.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point);
+            lbTotal.Location = new Point(479, 608);
+            lbTotal.Name = "lbTotal";
+            lbTotal.RightToLeft = RightToLeft.Yes;
+            lbTotal.Size = new Size(145, 56);
+            lbTotal.TabIndex = 18;
+            lbTotal.Text = "00.00";
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.FromArgb(46, 51, 73);
-            label6.Location = new Point(1122, 69);
+            label6.Location = new Point(1125, 90);
             label6.Name = "label6";
             label6.Size = new Size(86, 29);
             label6.TabIndex = 19;
             label6.Text = "Preço:";
             // 
-            // button4
+            // btnFimSessao
             // 
-            button4.Location = new Point(231, 608);
-            button4.Name = "button4";
-            button4.Size = new Size(66, 57);
-            button4.TabIndex = 20;
-            button4.Text = "Finalizar Sessão\r\n(F8)";
-            button4.UseVisualStyleBackColor = true;
+            btnFimSessao.Location = new Point(231, 608);
+            btnFimSessao.Name = "btnFimSessao";
+            btnFimSessao.Size = new Size(66, 57);
+            btnFimSessao.TabIndex = 20;
+            btnFimSessao.Text = "Finalizar Sessão\r\n(F8)";
+            btnFimSessao.UseVisualStyleBackColor = true;
+            btnFimSessao.Click += btnFimSessao_Click;
             // 
             // button6
             // 
@@ -283,14 +292,6 @@
             button8.Text = "Troca de Operador\n(F6)";
             button8.UseVisualStyleBackColor = true;
             // 
-            // panel9
-            // 
-            panel9.BackColor = Color.FromArgb(46, 51, 73);
-            panel9.Location = new Point(0, 0);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(1278, 10);
-            panel9.TabIndex = 3;
-            // 
             // panel10
             // 
             panel10.BackColor = Color.FromArgb(46, 51, 73);
@@ -317,6 +318,31 @@
             label7.TabIndex = 27;
             label7.Text = "Propaganda do \r\nCliente";
             // 
+            // pnlSub
+            // 
+            pnlSub.Controls.Add(mtxtPes);
+            pnlSub.Controls.Add(dgvPes);
+            pnlSub.Controls.Add(label3);
+            pnlSub.Controls.Add(label4);
+            pnlSub.Controls.Add(label6);
+            pnlSub.Controls.Add(lbTotal);
+            pnlSub.Dock = DockStyle.Fill;
+            pnlSub.Location = new Point(0, 0);
+            pnlSub.Name = "pnlSub";
+            pnlSub.Size = new Size(1264, 681);
+            pnlSub.TabIndex = 28;
+            // 
+            // mtxtPes
+            // 
+            mtxtPes.BackColor = SystemColors.Control;
+            mtxtPes.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            mtxtPes.HidePromptOnLeave = true;
+            mtxtPes.Location = new Point(336, 43);
+            mtxtPes.Name = "mtxtPes";
+            mtxtPes.Size = new Size(906, 43);
+            mtxtPes.TabIndex = 10;
+            mtxtPes.TextAlign = HorizontalAlignment.Right;
+            // 
             // Subtotal
             // 
             ClientSize = new Size(1264, 681);
@@ -326,31 +352,28 @@
             Controls.Add(button8);
             Controls.Add(button7);
             Controls.Add(button6);
-            Controls.Add(button4);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
+            Controls.Add(btnFimSessao);
             Controls.Add(label2);
             Controls.Add(button5);
-            Controls.Add(button3);
+            Controls.Add(btnFimVenda);
             Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(dataGridView1);
-            Controls.Add(textBox1);
+            Controls.Add(btnCanItem);
             Controls.Add(label1);
             Controls.Add(panel8);
             Controls.Add(panel7);
             Controls.Add(panel5);
             Controls.Add(panel2);
             Controls.Add(panel4);
+            Controls.Add(pnlSub);
             Name = "Subtotal";
             panel4.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPes).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            pnlSub.ResumeLayout(false);
+            pnlSub.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -366,18 +389,18 @@
         private Panel panel7;
         private Panel panel8;
         private Label label1;
-        private TextBox textBox1;
-        private DataGridView dataGridView1;
-        private Button button1;
+        private TextBox txtPesq;
+        private DataGridView dgvPes;
+        private Button btnCanItem;
         private Button button2;
-        private Button button3;
+        private Button btnFimVenda;
         private Button button5;
         private Label label2;
         private Label label3;
         private Label label4;
-        private Label label5;
+        private Label lbTotal;
         private Label label6;
-        private Button button4;
+        private Button btnFimSessao;
         private Button button6;
         private Button button7;
         private Button button8;
@@ -385,5 +408,7 @@
         private Panel panel10;
         private PictureBox pictureBox1;
         private Label label7;
+        private Panel pnlSub;
+        private MaskedTextBox mtxtPes;
     }
 }

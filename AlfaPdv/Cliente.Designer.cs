@@ -1,4 +1,6 @@
-﻿namespace AlfaPdv
+﻿using System.Windows.Forms;
+
+namespace AlfaPdv
 {
     partial class Cliente
     {
@@ -28,7 +30,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            dgvCli = new DataGridView();
             textBox1 = new TextBox();
             comboBox1 = new ComboBox();
             button1 = new Button();
@@ -37,17 +40,39 @@
             button3 = new Button();
             button4 = new Button();
             button5 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCli).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvCli
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(60, 139);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1139, 490);
-            dataGridView1.TabIndex = 0;
+            dgvCli.AllowUserToAddRows = false;
+            dgvCli.AllowUserToDeleteRows = false;
+            dgvCli.AllowUserToResizeColumns = false;
+            dgvCli.AllowUserToResizeRows = false;
+            dgvCli.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCli.BackgroundColor = Color.FromArgb(46, 51, 73);
+            dgvCli.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(46, 51, 73);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(80, 56, 80);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvCli.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvCli.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCli.GridColor = Color.White;
+            dgvCli.Location = new Point(60, 139);
+            dgvCli.MultiSelect = false;
+            dgvCli.Name = "dgvCli";
+            dgvCli.ReadOnly = true;
+            dgvCli.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvCli.RowHeadersVisible = false;
+            dgvCli.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvCli.RowTemplate.Height = 25;
+            dgvCli.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvCli.Size = new Size(1139, 490);
+            dgvCli.TabIndex = 0;
             // 
             // textBox1
             // 
@@ -58,7 +83,7 @@
             // 
             // comboBox1
             // 
-            comboBox1.FormattingEnabled = true;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.Items.AddRange(new object[] { "Codigo", "Descriçao", "Preço", "Estoque" });
             comboBox1.Location = new Point(60, 110);
             comboBox1.Name = "comboBox1";
@@ -136,17 +161,17 @@
             Controls.Add(button1);
             Controls.Add(comboBox1);
             Controls.Add(textBox1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvCli);
             Name = "Cliente";
             Text = "Produto";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCli).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgvCli;
         private TextBox textBox1;
         private ComboBox comboBox1;
         private Button button1;

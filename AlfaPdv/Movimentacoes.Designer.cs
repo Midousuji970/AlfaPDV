@@ -1,4 +1,6 @@
-﻿namespace AlfaPdv
+﻿using System.Windows.Forms;
+
+namespace AlfaPdv
 {
     partial class Movi
     {
@@ -28,7 +30,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            dgvMov = new DataGridView();
             textBox1 = new TextBox();
             comboBox1 = new ComboBox();
             button1 = new Button();
@@ -36,17 +39,39 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMov).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvMov
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(60, 139);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1139, 490);
-            dataGridView1.TabIndex = 0;
+            dgvMov.AllowUserToAddRows = false;
+            dgvMov.AllowUserToDeleteRows = false;
+            dgvMov.AllowUserToResizeColumns = false;
+            dgvMov.AllowUserToResizeRows = false;
+            dgvMov.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvMov.BackgroundColor = Color.FromArgb(46, 51, 73);
+            dgvMov.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(46, 51, 73);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(80, 56, 80);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvMov.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvMov.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMov.GridColor = Color.White;
+            dgvMov.Location = new Point(60, 139);
+            dgvMov.MultiSelect = false;
+            dgvMov.Name = "dgvMov";
+            dgvMov.ReadOnly = true;
+            dgvMov.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvMov.RowHeadersVisible = false;
+            dgvMov.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvMov.RowTemplate.Height = 25;
+            dgvMov.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvMov.Size = new Size(1139, 490);
+            dgvMov.TabIndex = 0;
             // 
             // textBox1
             // 
@@ -57,6 +82,7 @@
             // 
             // comboBox1
             // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Codigo", "Descriçao", "Preço", "Estoque" });
             comboBox1.Location = new Point(60, 110);
@@ -125,17 +151,17 @@
             Controls.Add(button1);
             Controls.Add(comboBox1);
             Controls.Add(textBox1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvMov);
             Name = "Movi";
             Text = "AlfaPDV";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMov).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgvMov;
         private TextBox textBox1;
         private ComboBox comboBox1;
         private Button button1;
