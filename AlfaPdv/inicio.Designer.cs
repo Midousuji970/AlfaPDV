@@ -28,148 +28,210 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnProd = new Button();
-            btnCli = new Button();
-            btnFun = new Button();
             btnSessao = new Button();
-            button5 = new Button();
-            button6 = new Button();
-            button7 = new Button();
-            button8 = new Button();
-            button9 = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
+            btnForm = new Button();
+            btnHist = new Button();
+            btnConf = new Button();
+            btnProprio = new Button();
+            btnSair = new Button();
+            lblVenda = new Label();
+            lblUtil = new Label();
             pnlini = new Panel();
+            tblPnlIni = new TableLayoutPanel();
+            btnFun = new Button();
+            btnCli = new Button();
+            btnProd = new Button();
+            lblCad = new Label();
+            pnlEsq = new Panel();
+            pnlini.SuspendLayout();
+            tblPnlIni.SuspendLayout();
             SuspendLayout();
-            // 
-            // btnProd
-            // 
-            btnProd.Location = new Point(207, 236);
-            btnProd.Name = "btnProd";
-            btnProd.Size = new Size(117, 52);
-            btnProd.TabIndex = 0;
-            btnProd.Text = "Produto";
-            btnProd.UseVisualStyleBackColor = true;
-            btnProd.Click += btnProd_Click;
-            // 
-            // btnCli
-            // 
-            btnCli.Location = new Point(207, 308);
-            btnCli.Name = "btnCli";
-            btnCli.Size = new Size(117, 52);
-            btnCli.TabIndex = 1;
-            btnCli.Text = "Cliente";
-            btnCli.UseVisualStyleBackColor = true;
-            btnCli.Click += btnCli_Click;
-            // 
-            // btnFun
-            // 
-            btnFun.Location = new Point(207, 380);
-            btnFun.Name = "btnFun";
-            btnFun.Size = new Size(117, 52);
-            btnFun.TabIndex = 2;
-            btnFun.Text = "Funcionario";
-            btnFun.UseVisualStyleBackColor = true;
             // 
             // btnSessao
             // 
-            btnSessao.Location = new Point(577, 236);
+            btnSessao.Dock = DockStyle.Fill;
+            btnSessao.Location = new Point(493, 229);
             btnSessao.Name = "btnSessao";
-            btnSessao.Size = new Size(117, 52);
+            btnSessao.Size = new Size(274, 107);
             btnSessao.TabIndex = 3;
             btnSessao.Text = "Iniciar Sessão";
             btnSessao.UseVisualStyleBackColor = true;
             btnSessao.Click += btnSessao_Click;
             // 
-            // button5
+            // btnForm
             // 
-            button5.Location = new Point(577, 308);
-            button5.Name = "button5";
-            button5.Size = new Size(117, 52);
-            button5.TabIndex = 4;
-            button5.Text = "Forma de Pagamento";
-            button5.UseVisualStyleBackColor = true;
+            btnForm.Dock = DockStyle.Fill;
+            btnForm.Location = new Point(493, 342);
+            btnForm.Name = "btnForm";
+            btnForm.Size = new Size(274, 107);
+            btnForm.TabIndex = 4;
+            btnForm.Text = "Forma de Pagamento";
+            btnForm.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnHist
             // 
-            button6.Location = new Point(577, 380);
-            button6.Name = "button6";
-            button6.Size = new Size(117, 52);
-            button6.TabIndex = 5;
-            button6.Text = "Historico de Vendas";
-            button6.UseVisualStyleBackColor = true;
+            btnHist.Dock = DockStyle.Fill;
+            btnHist.Location = new Point(493, 455);
+            btnHist.Name = "btnHist";
+            btnHist.Size = new Size(274, 107);
+            btnHist.TabIndex = 5;
+            btnHist.Text = "Historico de Vendas";
+            btnHist.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnConf
             // 
-            button7.Location = new Point(934, 236);
-            button7.Name = "button7";
-            button7.Size = new Size(117, 52);
-            button7.TabIndex = 6;
-            button7.Text = "Configurações";
-            button7.UseVisualStyleBackColor = true;
+            btnConf.Dock = DockStyle.Fill;
+            btnConf.Location = new Point(773, 229);
+            btnConf.Name = "btnConf";
+            btnConf.Size = new Size(274, 107);
+            btnConf.TabIndex = 6;
+            btnConf.Text = "Configurações";
+            btnConf.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnProprio
             // 
-            button8.Location = new Point(934, 308);
-            button8.Name = "button8";
-            button8.Size = new Size(117, 52);
-            button8.TabIndex = 7;
-            button8.Text = "Empresa";
-            button8.UseVisualStyleBackColor = true;
+            btnProprio.Dock = DockStyle.Fill;
+            btnProprio.Location = new Point(773, 342);
+            btnProprio.Name = "btnProprio";
+            btnProprio.Size = new Size(274, 107);
+            btnProprio.TabIndex = 7;
+            btnProprio.Text = "Empresa";
+            btnProprio.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btnSair
             // 
-            button9.Location = new Point(934, 380);
-            button9.Name = "button9";
-            button9.Size = new Size(117, 52);
-            button9.TabIndex = 8;
-            button9.Text = "Sair";
-            button9.UseVisualStyleBackColor = true;
+            btnSair.Dock = DockStyle.Fill;
+            btnSair.Location = new Point(773, 455);
+            btnSair.Name = "btnSair";
+            btnSair.Size = new Size(274, 107);
+            btnSair.TabIndex = 8;
+            btnSair.Text = "Sair";
+            btnSair.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblVenda
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Arial Narrow", 36F, FontStyle.Underline, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(176, 156);
-            label1.Name = "label1";
-            label1.Size = new Size(185, 57);
-            label1.TabIndex = 9;
-            label1.Text = "Cadastro";
+            lblVenda.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            lblVenda.AutoSize = true;
+            lblVenda.BackColor = Color.Transparent;
+            lblVenda.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Underline, GraphicsUnit.Point);
+            lblVenda.ForeColor = SystemColors.ButtonHighlight;
+            lblVenda.Location = new Point(548, 113);
+            lblVenda.Name = "lblVenda";
+            lblVenda.Size = new Size(164, 113);
+            lblVenda.TabIndex = 10;
+            lblVenda.Text = "Venda";
+            lblVenda.TextAlign = ContentAlignment.BottomRight;
             // 
-            // label2
+            // lblUtil
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Arial Narrow", 36F, FontStyle.Underline, GraphicsUnit.Point);
-            label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(568, 156);
-            label2.Name = "label2";
-            label2.Size = new Size(139, 57);
-            label2.TabIndex = 10;
-            label2.Text = "Venda";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Arial Narrow", 36F, FontStyle.Underline, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(904, 156);
-            label3.Name = "label3";
-            label3.Size = new Size(188, 57);
-            label3.TabIndex = 11;
-            label3.Text = "Utilitarios";
+            lblUtil.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            lblUtil.AutoSize = true;
+            lblUtil.BackColor = Color.Transparent;
+            lblUtil.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Underline, GraphicsUnit.Point);
+            lblUtil.ForeColor = SystemColors.ButtonHighlight;
+            lblUtil.Location = new Point(800, 113);
+            lblUtil.Name = "lblUtil";
+            lblUtil.Size = new Size(219, 113);
+            lblUtil.TabIndex = 11;
+            lblUtil.Text = "Utilitarios";
+            lblUtil.TextAlign = ContentAlignment.BottomLeft;
             // 
             // pnlini
             // 
+            pnlini.Controls.Add(tblPnlIni);
             pnlini.Dock = DockStyle.Fill;
             pnlini.Location = new Point(0, 0);
             pnlini.Name = "pnlini";
             pnlini.Size = new Size(1264, 681);
             pnlini.TabIndex = 12;
+            // 
+            // tblPnlIni
+            // 
+            tblPnlIni.BackColor = Color.FromArgb(54, 73, 84);
+            tblPnlIni.ColumnCount = 5;
+            tblPnlIni.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.664999F));
+            tblPnlIni.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.223341F));
+            tblPnlIni.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.2233334F));
+            tblPnlIni.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.2233334F));
+            tblPnlIni.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.6649933F));
+            tblPnlIni.Controls.Add(btnFun, 1, 4);
+            tblPnlIni.Controls.Add(lblVenda, 2, 1);
+            tblPnlIni.Controls.Add(btnCli, 1, 3);
+            tblPnlIni.Controls.Add(btnSair, 3, 4);
+            tblPnlIni.Controls.Add(btnProd, 1, 2);
+            tblPnlIni.Controls.Add(btnProprio, 3, 3);
+            tblPnlIni.Controls.Add(btnConf, 3, 2);
+            tblPnlIni.Controls.Add(btnHist, 2, 4);
+            tblPnlIni.Controls.Add(btnSessao, 2, 2);
+            tblPnlIni.Controls.Add(btnForm, 2, 3);
+            tblPnlIni.Controls.Add(lblCad, 1, 1);
+            tblPnlIni.Controls.Add(lblUtil, 3, 1);
+            tblPnlIni.Dock = DockStyle.Fill;
+            tblPnlIni.Location = new Point(0, 0);
+            tblPnlIni.Name = "tblPnlIni";
+            tblPnlIni.RowCount = 6;
+            tblPnlIni.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tblPnlIni.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tblPnlIni.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tblPnlIni.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tblPnlIni.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tblPnlIni.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tblPnlIni.Size = new Size(1264, 681);
+            tblPnlIni.TabIndex = 0;
+            // 
+            // btnFun
+            // 
+            btnFun.Dock = DockStyle.Fill;
+            btnFun.Location = new Point(213, 455);
+            btnFun.Name = "btnFun";
+            btnFun.Size = new Size(274, 107);
+            btnFun.TabIndex = 2;
+            btnFun.Text = "Funcionario";
+            btnFun.UseVisualStyleBackColor = true;
+            // 
+            // btnCli
+            // 
+            btnCli.Dock = DockStyle.Fill;
+            btnCli.Location = new Point(213, 342);
+            btnCli.Name = "btnCli";
+            btnCli.Size = new Size(274, 107);
+            btnCli.TabIndex = 1;
+            btnCli.Text = "Cliente";
+            btnCli.UseVisualStyleBackColor = true;
+            btnCli.Click += btnCli_Click;
+            // 
+            // btnProd
+            // 
+            btnProd.Dock = DockStyle.Fill;
+            btnProd.Location = new Point(213, 229);
+            btnProd.Name = "btnProd";
+            btnProd.Size = new Size(274, 107);
+            btnProd.TabIndex = 0;
+            btnProd.Text = "Produto";
+            btnProd.UseVisualStyleBackColor = true;
+            btnProd.Click += btnProd_Click;
+            // 
+            // lblCad
+            // 
+            lblCad.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            lblCad.AutoSize = true;
+            lblCad.BackColor = Color.Transparent;
+            lblCad.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Underline, GraphicsUnit.Point);
+            lblCad.ForeColor = SystemColors.ButtonHighlight;
+            lblCad.Location = new Point(240, 113);
+            lblCad.Name = "lblCad";
+            lblCad.Size = new Size(220, 113);
+            lblCad.TabIndex = 9;
+            lblCad.Text = "Cadastro";
+            lblCad.TextAlign = ContentAlignment.BottomRight;
+            // 
+            // pnlEsq
+            // 
+            pnlEsq.Dock = DockStyle.Fill;
+            pnlEsq.Location = new Point(3, 3);
+            pnlEsq.Name = "pnlEsq";
+            pnlEsq.Size = new Size(449, 675);
+            pnlEsq.TabIndex = 0;
             // 
             // Inicio
             // 
@@ -177,40 +239,31 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(1264, 681);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(button9);
-            Controls.Add(button8);
-            Controls.Add(button7);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(btnSessao);
-            Controls.Add(btnFun);
-            Controls.Add(btnCli);
-            Controls.Add(btnProd);
             Controls.Add(pnlini);
             Name = "Inicio";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AlfaPDV";
+            pnlini.ResumeLayout(false);
+            tblPnlIni.ResumeLayout(false);
+            tblPnlIni.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Button btnProd;
-        private Button btnCli;
-        private Button btnFun;
         private Button btnSessao;
-        private Button button5;
-        private Button button6;
-        private Button button7;
-        private Button button8;
-        private Button button9;
-        private Label label1;
-        private Label label2;
-        private Label label3;
+        private Button btnForm;
+        private Button btnHist;
+        private Button btnConf;
+        private Button btnProprio;
+        private Button btnSair;
+        private Label lblVenda;
+        private Label lblUtil;
         private Panel pnlini;
+        private Panel pnlEsq;
+        private Button btnProd;
+        private TableLayoutPanel tblPnlIni;
+        private Button btnFun;
+        private Button btnCli;
+        private Label lblCad;
     }
 }

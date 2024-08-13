@@ -16,6 +16,7 @@ namespace AlfaPdv
         {
             InitializeComponent();
             InitializeButton();
+
         }
 
         private void InitializeButton()
@@ -26,6 +27,17 @@ namespace AlfaPdv
             btnSessao.Click += new EventHandler(btnSessao_Click);
         }
 
+        private void ini_Load(object sender, EventArgs e)
+        {
+            // Calcule a posição central para o Label
+            int labelWidth = lblVenda.Width;
+            int labelHeight = lblVenda.Height;
+            int formWidth = this.ClientSize.Width;
+            int formHeight = this.ClientSize.Height;
+
+            // Defina a posição do Label para centralizá-lo
+            lblVenda.Location = new Point((formWidth - labelWidth) / 2, (formHeight - labelHeight) / 2);
+        }
         private void btnProd_Click(object sender, EventArgs e)
         {
             LoadItemProdForm();
@@ -99,5 +111,6 @@ namespace AlfaPdv
             pnlini.Controls.Add(SubForm);
             SubForm.Show();
         }
+
     }
 }

@@ -45,6 +45,7 @@
             txtB1.RightToLeft = RightToLeft.No;
             txtB1.Size = new Size(332, 25);
             txtB1.TabIndex = 0;
+            txtB1.KeyPress += txtB1_KeyPress;
             // 
             // txtB3
             // 
@@ -59,10 +60,11 @@
             txtB3.RightToLeft = RightToLeft.No;
             txtB3.Size = new Size(332, 25);
             txtB3.TabIndex = 2;
+            txtB3.KeyPress += txtB3_KeyPress;
             // 
             // btnLogin
             // 
-            btnLogin.Font = new Font("Arial Narrow", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLogin.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnLogin.Location = new Point(169, 101);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(75, 25);

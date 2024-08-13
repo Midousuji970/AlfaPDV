@@ -17,7 +17,26 @@ namespace AlfaPdv
         {
             Application.Exit();
         }
-
+        private void txtB1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                e.Handled = true;
+                txtB3.Focus();
+                txtB3.Select();
+            }
+        }
+        private void txtB3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           if(e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                button1_Click(sender, e);
+            }
+        }
         private async void button1_Click(object sender, EventArgs e)
         {
             try
@@ -48,5 +67,6 @@ namespace AlfaPdv
                 Console.WriteLine("Erro: " + ex.Message);
             }
         }
+
     }
 }

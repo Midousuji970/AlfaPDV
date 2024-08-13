@@ -8,6 +8,8 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace AlfaPdv.Services
 {
@@ -124,6 +126,16 @@ namespace AlfaPdv.Services
             {
                 throw new Exception("Erro ao fazer a solicitação DELETE: " + ex.Message, ex);
             }
+        }
+        private void A(int id) {
+            string database = "Server=localhost;Database=ALFAPDV;User ID=alfamaq;Password=29814608";
+
+            using (MySqlConnection conn = new MySqlConnection(database))
+            {
+                conn.Open();
+                string chamada = "SELECT ";
+
+            } 
         }
 
 
