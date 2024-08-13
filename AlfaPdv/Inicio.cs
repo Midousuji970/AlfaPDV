@@ -29,14 +29,14 @@ namespace AlfaPdv
 
         private void ini_Load(object sender, EventArgs e)
         {
-            // Calcule a posição central para o Label
-            int labelWidth = lblVenda.Width;
-            int labelHeight = lblVenda.Height;
+            // Calcule a posição central para o Label j
+            //int labelWidth = lblVenda.Width;
+            //int labelHeight = lblVenda.Height;
             int formWidth = this.ClientSize.Width;
             int formHeight = this.ClientSize.Height;
 
             // Defina a posição do Label para centralizá-lo
-            lblVenda.Location = new Point((formWidth - labelWidth) / 2, (formHeight - labelHeight) / 2);
+            //lblVenda.Location = new Point((formWidth - labelWidth) / 2, (formHeight - labelHeight) / 2);
         }
         private void btnProd_Click(object sender, EventArgs e)
         {
