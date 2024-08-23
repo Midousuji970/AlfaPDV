@@ -130,10 +130,6 @@ namespace AlfaPdv
             pnlCadFun.Controls.Add(ItemFunForm);
             ItemFunForm.Show();
 
-
-
-
-
         }
         private async Task FunFull(int id)
         {
@@ -145,9 +141,9 @@ namespace AlfaPdv
                 FunServices FunCompleto = new FunServices();
                 FunCompleto dataCompleto = await FunCompleto.FunFullIntegra(id);
 
-                Envio.FunNome = dataCompleto.Nome;
-                Envio.FunCpf = dataCompleto.Cpf;
-                Envio.Ende = dataCompleto.Ende;
+                Envio.FunNome = dataCompleto.funNome;
+                Envio.FunCpf = dataCompleto.funCpf;
+                Envio.Ende = dataCompleto.funEnde;
                 Envio.Cep = dataCompleto.Cep;
                 Envio.Num = dataCompleto.Numero;
                 Envio.FunCargo = dataCompleto.Cargo;

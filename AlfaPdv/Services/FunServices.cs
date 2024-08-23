@@ -39,15 +39,61 @@ namespace AlfaPdv.Services
 
         }
 
+        // public async Task<FunCompleto> FunFullIntegra(int id)
+        // {
+
+        //    var vera = await httpClient.GetAsync($"http://localhost/Portfolio/login.php?tabela=funcionario&id={id}");
+        //   var jsonFunFull = await vera.Content.ReadAsStringAsync();
+
+        //            FunCompleto full = JsonConvert.DeserializeObject<FunCompleto>(jsonFunFull);
+        //          return full;
+
+        //      }
         public async Task<FunCompleto> FunFullIntegra(int id)
         {
+            string connectionString = "server=seu_servidor;database=seu_banco;uid=seu_usuario;pwd=sua_senha;";
 
-            var vera = await httpClient.GetAsync($"http://localhost/Portfolio/login.php?tabela=funcionario&id={id}");
-            var jsonFunFull = await vera.Content.ReadAsStringAsync();
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                await connection.OpenAsync();
 
-            FunCompleto full = JsonConvert.DeserializeObject<FunCompleto>(jsonFunFull);
-            return full;
+                using (MySqlCommand command = new
+             MySqlCommand("SELECT * FROM funcionario WHERE id = @id", connection))
+                {
+                    command.Parameters.AddWithValue("@id", id);
 
+                    using (MySqlDataReader reader = (MySqlDataReader)await command.ExecuteReaderAsync())
+                    {
+                        if (reader.Read())
+
+                        {
+                            FunCompleto full = new FunCompleto
+                            {
+                                // Mapeie os campos do banco para as propriedades do objeto
+                                funId = Convert.ToInt32(reader["funId"]),
+                                funNome = reader["funNome"] != DBNull.Value ? reader["funNome"].ToString() : null,
+                                funCpf = reader["funCpf"] != DBNull.Value ? Convert.ToInt32(reader["funCpf"]) : 0,
+                                funSenha = reader["funSenha"] != DBNull.Value ? reader["funSenha"].ToString() : null,
+                                funEnd = reader["funEnd"] != DBNull.Value ? reader["funEnd"].ToString() : null,
+                                funEndNum = reader["funEndNum"] != DBNull.Value ? Convert.ToInt32(reader["funEndNum"]) : 0,
+                                funCargo = reader["funCargo"] != DBNull.Value ? Convert.ToInt32(reader["funCargo"]) : 0,
+                                funTele = reader["funTele"] != DBNull.Value ? Convert.ToInt32(reader["funTele"]) : 0,
+                                funMail = reader["funMail"] != DBNull.Value ? reader["funMail"].ToString() : null,
+                                funDataEnt = reader["funDataEnt"] != DBNull.Value ? Convert.ToInt32(reader["funDataEnt"]) : 0,
+                                funDataSai = reader["funDataSai"] != DBNull.Value ? Convert.ToInt32(reader["funDataSai"]) : 0,
+                                funAtive = reader["funAtive"] != DBNull.Value ? Convert.ToChar(reader["funAtive"]) : 'N'
+                            };
+
+                            return full;
+                        }
+                        else
+                        {
+                            // Nenhum registro encontrado
+                            return null;
+                        }
+                    }
+                }
+            }
         }
 
         public async Task<HttpResponseMessage> Puts(HttpRequestMessage request)
@@ -127,16 +173,25 @@ namespace AlfaPdv.Services
                 throw new Exception("Erro ao fazer a solicitação DELETE: " + ex.Message, ex);
             }
         }
-        private void A(int id) {
-            string database = "Server=localhost;Database=ALFAPDV;User ID=alfamaq;Password=29814608";
+    //    private void A(int id) {
+      //      string database = "Server=localhost;Database=ALFAPDV;User ID=alfamaq;Password=29814608";
+      //
+        //    using (MySqlConnection conn = new MySqlConnection(database))
+          //  {
+            //    try { 
+              //      conn.Open();
+                //    MySqlCommand cmd = new MySqlCommand("SELECT * FROM FUNCIONARIO", conn);
+                  //  MySqlDataReader reader = cmd.ExecuteReader();
+//
+  //              }
+    //            catch
+      //          {
+      
+      //          }
+                
 
-            using (MySqlConnection conn = new MySqlConnection(database))
-            {
-                conn.Open();
-                string chamada = "SELECT ";
-
-            } 
-        }
+        //    } 
+      //  }
 
 
     }   

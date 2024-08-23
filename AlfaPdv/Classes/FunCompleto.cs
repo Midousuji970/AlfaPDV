@@ -8,17 +8,18 @@ namespace AlfaPdv.Classes
 {
     public class FunCompleto
     {
-    public int Id { get; set; }
-    public string Nome { get; set; }
-    public string Cpf {  get; set; }
-        public string Senha {get; set; }
-        public string Ende { get; set; }
-        public string Cep { get; set; }
-        public string Numero { get; set; }
-        public string Cargo { get; set; }
-        public string Tel { get; set; }
-        public string Email { get; set; }
-        public string Datas {  get; set; }
+    public int funId { get; set; }
+    public string funNome { get; set; }
+    public int funCpf {  get; set; }
+        public string funSenha { get; set; }
+        public string funEnd { get; set; }
+        public int funEndNum { get; set; }
+        public int funCargo { get; set; }
+        public int funTele { get; set; }
+        public string funMail { get; set; }
+        public int funDataEnt {  get; set; }
+        public int funDataSai { get; set; }
+        public char funAtive { get; set; }
 
     }
 }
