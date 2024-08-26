@@ -39,14 +39,11 @@ namespace AlfaPdv
         }
         private async void InitializeDVG()
         {
-            VerFun verFun = new VerFun();
             try
             {
-                FunServices VerFun = new FunServices();
-
-                List<VerFun> data = await VerFun.Integra();
+                FunServices funServices = new FunServices();
+                DataTable data = await funServices.Integra();
                 dgvFun.DataSource = data;
-
             }
             catch (Exception ex)
             {
@@ -142,14 +139,13 @@ namespace AlfaPdv
                 FunCompleto dataCompleto = await FunCompleto.FunFullIntegra(id);
 
                 Envio.FunNome = dataCompleto.funNome;
-                Envio.FunCpf = dataCompleto.funCpf;
-                Envio.Ende = dataCompleto.funEnde;
-                Envio.Cep = dataCompleto.Cep;
-                Envio.Num = dataCompleto.Numero;
-                Envio.FunCargo = dataCompleto.Cargo;
-                Envio.Tele = dataCompleto.Tel; // Atribua o valor do telefone a Envio.Tele
-                Envio.Email = dataCompleto.Email;
-                Envio.Datas = dataCompleto.Datas;
+                Envio.FunCpf = dataCompleto.funCpf.ToString(); // Deveria estar correto
+                Envio.Ende = dataCompleto.funEnd; // Provavelmente deveria ser funEnd
+                Envio.Num = dataCompleto.funEndNum.ToString(); // Deveria estar correto
+                Envio.FunCargo = dataCompleto.funCargo.ToString(); // Deveria estar correto
+                Envio.Tele = dataCompleto.funTele.ToString(); // Deveria estar correto
+                Envio.Email = dataCompleto.funMail;
+                Envio.Datas = dataCompleto.funDataEnt.ToString();
 
             }
             catch (Exception ex) { }

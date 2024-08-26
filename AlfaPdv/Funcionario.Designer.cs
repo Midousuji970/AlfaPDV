@@ -160,11 +160,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(1264, 681);
+            Controls.Add(dgvFun);
             Controls.Add(label1);
             Controls.Add(btnVoltaIni);
             Controls.Add(comboBox1);
             Controls.Add(textBox1);
-            Controls.Add(dgvFun);
             Controls.Add(pnlCadFun);
             Name = "Funcionario";
             Text = "Produto";

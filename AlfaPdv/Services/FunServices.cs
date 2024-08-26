@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace AlfaPdv.Services
 {
@@ -28,16 +29,27 @@ namespace AlfaPdv.Services
 
         }
 
-        public async Task<List<VerFun>> Integra()
+        public async Task<DataTable> Integra()
         {
+            string connectionString = "Server=127.0.0.1;Port=3306;Database=alfapdv;User ID=alfamaq;Password=29814608;SslMode=None;";
+            DataTable dataTable = new DataTable();
 
-            var ver = await httpClient.GetAsync($"http://localhost/Portfolio/teste.php?tabela=funcionario");
-            var jsonFun = await ver.Content.ReadAsStringAsync();
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                await connection.OpenAsync();
 
-            List<VerFun> fila = JsonConvert.DeserializeObject<List<VerFun>>(jsonFun);
-            return fila;
+                using (MySqlCommand command = new MySqlCommand("SELECT funId, funNome, funCargo FROM funcionario", connection))
+                {
+                    using (MySqlDataReader reader = (MySqlDataReader)await command.ExecuteReaderAsync())
+                    {
+                        dataTable.Load(reader);
+                    }
+                }
+            }
+            return dataTable;
 
         }
+
 
         // public async Task<FunCompleto> FunFullIntegra(int id)
         // {
@@ -51,7 +63,7 @@ namespace AlfaPdv.Services
         //      }
         public async Task<FunCompleto> FunFullIntegra(int id)
         {
-            string connectionString = "server=seu_servidor;database=seu_banco;uid=seu_usuario;pwd=sua_senha;";
+            string connectionString = "Server=127.0.0.1;Port=3306;Database=alfapdv;User ID=alfamaq;Password=29814608;SslMode=None;";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
