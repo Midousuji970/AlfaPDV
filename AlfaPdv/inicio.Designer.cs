@@ -47,63 +47,87 @@
             // btnSessao
             // 
             btnSessao.Dock = DockStyle.Fill;
+            btnSessao.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSessao.ForeColor = Color.White;
+            btnSessao.Image = Properties.Resources.shopping_cart__1___1_;
             btnSessao.Location = new Point(501, 148);
             btnSessao.Name = "btnSessao";
             btnSessao.Size = new Size(279, 139);
             btnSessao.TabIndex = 3;
             btnSessao.Text = "Iniciar Sessão";
-            btnSessao.UseVisualStyleBackColor = true;
+            btnSessao.TextAlign = ContentAlignment.BottomCenter;
+            btnSessao.UseVisualStyleBackColor = false;
             btnSessao.Click += btnSessao_Click;
             // 
             // btnForm
             // 
             btnForm.Dock = DockStyle.Fill;
+            btnForm.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            btnForm.ForeColor = Color.White;
+            btnForm.Image = Properties.Resources.credit_card__1_;
             btnForm.Location = new Point(501, 293);
             btnForm.Name = "btnForm";
             btnForm.Size = new Size(279, 139);
             btnForm.TabIndex = 4;
             btnForm.Text = "Forma de Pagamento";
-            btnForm.UseVisualStyleBackColor = true;
+            btnForm.TextAlign = ContentAlignment.BottomCenter;
+            btnForm.UseVisualStyleBackColor = false;
             // 
             // btnHist
             // 
             btnHist.Dock = DockStyle.Fill;
+            btnHist.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnHist.ForeColor = Color.White;
+            btnHist.Image = Properties.Resources.clipboard__1_;
             btnHist.Location = new Point(501, 438);
             btnHist.Name = "btnHist";
             btnHist.Size = new Size(279, 139);
             btnHist.TabIndex = 5;
             btnHist.Text = "Historico de Vendas";
-            btnHist.UseVisualStyleBackColor = true;
+            btnHist.TextAlign = ContentAlignment.BottomCenter;
+            btnHist.UseVisualStyleBackColor = false;
             // 
             // btnConf
             // 
             btnConf.Dock = DockStyle.Fill;
+            btnConf.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnConf.ForeColor = Color.White;
+            btnConf.Image = Properties.Resources.settings__1_;
             btnConf.Location = new Point(786, 148);
             btnConf.Name = "btnConf";
             btnConf.Size = new Size(279, 139);
             btnConf.TabIndex = 6;
             btnConf.Text = "Configurações";
-            btnConf.UseVisualStyleBackColor = true;
+            btnConf.TextAlign = ContentAlignment.BottomCenter;
+            btnConf.UseVisualStyleBackColor = false;
             // 
             // btnProprio
             // 
             btnProprio.Dock = DockStyle.Fill;
+            btnProprio.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnProprio.ForeColor = Color.White;
+            btnProprio.Image = Properties.Resources.building__1_;
             btnProprio.Location = new Point(786, 293);
             btnProprio.Name = "btnProprio";
             btnProprio.Size = new Size(279, 139);
             btnProprio.TabIndex = 7;
             btnProprio.Text = "Empresa";
-            btnProprio.UseVisualStyleBackColor = true;
+            btnProprio.TextAlign = ContentAlignment.BottomCenter;
+            btnProprio.UseVisualStyleBackColor = false;
             // 
             // btnSair
             // 
             btnSair.Dock = DockStyle.Fill;
+            btnSair.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSair.ForeColor = Color.White;
+            btnSair.Image = Properties.Resources.power_off__1_;
             btnSair.Location = new Point(786, 438);
             btnSair.Name = "btnSair";
             btnSair.Size = new Size(279, 139);
             btnSair.TabIndex = 8;
             btnSair.Text = "Sair";
-            btnSair.UseVisualStyleBackColor = true;
+            btnSair.TextAlign = ContentAlignment.BottomCenter;
+            btnSair.UseVisualStyleBackColor = false;
             // 
             // pnlini
             // 
@@ -148,12 +172,16 @@
             // btnFun
             // 
             btnFun.Dock = DockStyle.Fill;
+            btnFun.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnFun.ForeColor = Color.White;
+            btnFun.Image = Properties.Resources.user__1_;
             btnFun.Location = new Point(216, 438);
             btnFun.Name = "btnFun";
             btnFun.Size = new Size(279, 139);
             btnFun.TabIndex = 2;
             btnFun.Text = "Funcionario";
-            btnFun.UseVisualStyleBackColor = true;
+            btnFun.TextAlign = ContentAlignment.BottomCenter;
+            btnFun.UseVisualStyleBackColor = false;
             // 
             // btnCli
             // 
@@ -161,6 +189,7 @@
             btnCli.Dock = DockStyle.Fill;
             btnCli.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnCli.ForeColor = Color.White;
+            btnCli.Image = Properties.Resources.client__1_;
             btnCli.Location = new Point(216, 293);
             btnCli.Name = "btnCli";
             btnCli.Padding = new Padding(0, 0, 0, 5);
@@ -177,9 +206,11 @@
             btnProd.Dock = DockStyle.Fill;
             btnProd.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnProd.ForeColor = Color.White;
+            btnProd.Image = Properties.Resources.product__1_;
             btnProd.Location = new Point(216, 148);
             btnProd.Name = "btnProd";
             btnProd.Padding = new Padding(0, 0, 0, 5);
+            btnProd.RightToLeft = RightToLeft.No;
             btnProd.Size = new Size(279, 139);
             btnProd.TabIndex = 0;
             btnProd.Text = "Produto";
@@ -202,9 +233,11 @@
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(1284, 729);
             Controls.Add(pnlini);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Inicio";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AlfaPDV";
+            TopMost = true;
             pnlini.ResumeLayout(false);
             tblPnlIni.ResumeLayout(false);
             ResumeLayout(false);
