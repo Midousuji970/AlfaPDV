@@ -128,6 +128,7 @@
             btnSair.Text = "Sair";
             btnSair.TextAlign = ContentAlignment.BottomCenter;
             btnSair.UseVisualStyleBackColor = false;
+            btnSair.Click += btnSair_Click;
             // 
             // pnlini
             // 
@@ -140,7 +141,7 @@
             // 
             // tblPnlIni
             // 
-            tblPnlIni.BackColor = Color.FromArgb(54, 73, 84);
+            tblPnlIni.BackColor = Color.FromArgb(54, 63, 84);
             tblPnlIni.ColumnCount = 5;
             tblPnlIni.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.665F));
             tblPnlIni.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.223341F));
@@ -185,7 +186,7 @@
             // 
             // btnCli
             // 
-            btnCli.BackColor = Color.FromArgb(54, 73, 84);
+            btnCli.BackColor = Color.FromArgb(54, 63, 84);
             btnCli.Dock = DockStyle.Fill;
             btnCli.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnCli.ForeColor = Color.White;
@@ -202,7 +203,7 @@
             // 
             // btnProd
             // 
-            btnProd.BackColor = Color.FromArgb(54, 73, 84);
+            btnProd.BackColor = Color.FromArgb(54, 63, 84);
             btnProd.Dock = DockStyle.Fill;
             btnProd.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnProd.ForeColor = Color.White;

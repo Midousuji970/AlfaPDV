@@ -28,15 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel4 = new Panel();
-            panel1 = new Panel();
-            panel3 = new Panel();
-            panel2 = new Panel();
-            panel9 = new Panel();
-            panel5 = new Panel();
-            panel6 = new Panel();
             panel7 = new Panel();
-            panel8 = new Panel();
             label1 = new Label();
             dgvPes = new DataGridView();
             btnCanItem = new Button();
@@ -52,94 +44,27 @@
             button6 = new Button();
             button7 = new Button();
             button8 = new Button();
-            panel10 = new Panel();
-            pictureBox1 = new PictureBox();
-            label7 = new Label();
             pnlSub = new Panel();
+            panel1 = new Panel();
+            panel3 = new Panel();
+            panel5 = new Panel();
+            panel2 = new Panel();
+            panel8 = new Panel();
             mtxtPes = new MaskedTextBox();
-            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvPes).BeginInit();
+            pnlSub.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvPes).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            pnlSub.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.FromArgb(46, 51, 73);
-            panel4.Controls.Add(panel1);
-            panel4.Location = new Point(-7, -2);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(1278, 13);
-            panel4.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(46, 51, 73);
-            panel1.Controls.Add(panel3);
-            panel1.Location = new Point(0, -1);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1278, 14);
-            panel1.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            panel3.Location = new Point(3, 4);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(10, 680);
-            panel3.TabIndex = 3;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(46, 51, 73);
-            panel2.Controls.Add(panel9);
-            panel2.Location = new Point(-7, 671);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1278, 10);
-            panel2.TabIndex = 2;
-            // 
-            // panel9
-            // 
-            panel9.BackColor = Color.FromArgb(46, 51, 73);
-            panel9.Location = new Point(0, 0);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(1278, 10);
-            panel9.TabIndex = 3;
-            // 
-            // panel5
-            // 
-            panel5.BackColor = Color.FromArgb(46, 51, 73);
-            panel5.Controls.Add(panel6);
-            panel5.Location = new Point(-1, -2);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(10, 680);
-            panel5.TabIndex = 3;
-            // 
-            // panel6
-            // 
-            panel6.BackColor = Color.FromArgb(46, 51, 73);
-            panel6.Location = new Point(0, 0);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(10, 680);
-            panel6.TabIndex = 4;
             // 
             // panel7
             // 
-            panel7.BackColor = Color.FromArgb(46, 51, 73);
-            panel7.Location = new Point(1257, 0);
+            panel7.BackColor = Color.FromArgb(54, 63, 84);
+            panel7.Dock = DockStyle.Right;
+            panel7.Location = new Point(1253, 0);
             panel7.Name = "panel7";
-            panel7.Size = new Size(11, 680);
+            panel7.Size = new Size(11, 681);
             panel7.TabIndex = 4;
-            // 
-            // panel8
-            // 
-            panel8.BackColor = Color.FromArgb(46, 51, 73);
-            panel8.Location = new Point(303, 0);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(10, 680);
-            panel8.TabIndex = 5;
             // 
             // label1
             // 
@@ -167,7 +92,7 @@
             // 
             // btnCanItem
             // 
-            btnCanItem.Location = new Point(15, 546);
+            btnCanItem.Location = new Point(104, 364);
             btnCanItem.Name = "btnCanItem";
             btnCanItem.Size = new Size(66, 59);
             btnCanItem.TabIndex = 10;
@@ -292,45 +217,66 @@
             button8.Text = "Troca de Operador\n(F6)";
             button8.UseVisualStyleBackColor = true;
             // 
-            // panel10
-            // 
-            panel10.BackColor = Color.FromArgb(46, 51, 73);
-            panel10.Location = new Point(-7, 527);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(317, 13);
-            panel10.TabIndex = 24;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(15, 14);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(282, 507);
-            pictureBox1.TabIndex = 26;
-            pictureBox1.TabStop = false;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Arial", 26.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(15, 141);
-            label7.Name = "label7";
-            label7.Size = new Size(278, 82);
-            label7.TabIndex = 27;
-            label7.Text = "Propaganda do \r\nCliente";
-            // 
             // pnlSub
             // 
+            pnlSub.Controls.Add(panel1);
+            pnlSub.Controls.Add(panel5);
+            pnlSub.Controls.Add(panel2);
             pnlSub.Controls.Add(mtxtPes);
             pnlSub.Controls.Add(dgvPes);
             pnlSub.Controls.Add(label3);
             pnlSub.Controls.Add(label4);
             pnlSub.Controls.Add(label6);
+            pnlSub.Controls.Add(btnCanItem);
             pnlSub.Controls.Add(lbTotal);
             pnlSub.Dock = DockStyle.Fill;
             pnlSub.Location = new Point(0, 0);
             pnlSub.Name = "pnlSub";
             pnlSub.Size = new Size(1264, 681);
             pnlSub.TabIndex = 28;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(54, 63, 84);
+            panel1.Controls.Add(panel3);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(11, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1253, 14);
+            panel1.TabIndex = 23;
+            // 
+            // panel3
+            // 
+            panel3.Location = new Point(3, 4);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(10, 680);
+            panel3.TabIndex = 3;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(54, 63, 84);
+            panel5.Dock = DockStyle.Left;
+            panel5.Location = new Point(0, 0);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(11, 667);
+            panel5.TabIndex = 22;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(54, 63, 84);
+            panel2.Controls.Add(panel8);
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 667);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1264, 14);
+            panel2.TabIndex = 20;
+            // 
+            // panel8
+            // 
+            panel8.Location = new Point(3, 4);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(10, 680);
+            panel8.TabIndex = 3;
             // 
             // mtxtPes
             // 
@@ -346,9 +292,6 @@
             // Subtotal
             // 
             ClientSize = new Size(1264, 681);
-            Controls.Add(label7);
-            Controls.Add(pictureBox1);
-            Controls.Add(panel10);
             Controls.Add(button8);
             Controls.Add(button7);
             Controls.Add(button6);
@@ -357,37 +300,21 @@
             Controls.Add(button5);
             Controls.Add(btnFimVenda);
             Controls.Add(button2);
-            Controls.Add(btnCanItem);
             Controls.Add(label1);
-            Controls.Add(panel8);
             Controls.Add(panel7);
-            Controls.Add(panel5);
-            Controls.Add(panel2);
-            Controls.Add(panel4);
             Controls.Add(pnlSub);
             Name = "Subtotal";
-            panel4.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvPes).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlSub.ResumeLayout(false);
             pnlSub.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Panel panel4;
-        private Panel panel1;
-        private Panel panel3;
-        private Panel panel2;
-        private Panel panel5;
-        private Panel panel6;
         private Panel panel7;
-        private Panel panel8;
         private Label label1;
         private TextBox txtPesq;
         private DataGridView dgvPes;
@@ -404,11 +331,12 @@
         private Button button6;
         private Button button7;
         private Button button8;
-        private Panel panel9;
-        private Panel panel10;
-        private PictureBox pictureBox1;
-        private Label label7;
         private Panel pnlSub;
         private MaskedTextBox mtxtPes;
+        private Panel panel2;
+        private Panel panel8;
+        private Panel panel5;
+        private Panel panel1;
+        private Panel panel3;
     }
 }

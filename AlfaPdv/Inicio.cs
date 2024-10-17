@@ -112,5 +112,9 @@ namespace AlfaPdv
             SubForm.Show();
         }
 
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

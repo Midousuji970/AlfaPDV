@@ -11,27 +11,36 @@ using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Data;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
+using System.Windows.Forms;
 
 namespace AlfaPdv.Services
 {
     internal class FunServices
     {
         private static readonly HttpClient httpClient = new HttpClient();
-        public async Task<ChamarFun> Integracao(int id)
+        public string connectionString = "Server=127.0.0.1;Port=3306;Database=alfapdv;User ID=alfamaq;Password=29814608;SslMode=None;";
+        public async Task<ChamarFun> Integracao(int id,string senha)
         {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                using (MySqlCommand cmd = new MySqlCommand("SELECT funId, funSenha FROM funcionario WHERE funId = @id AND funSenha = @senha)"))
+                {
+                }
 
-            var resposta = await httpClient.GetAsync($"http://localhost/Portfolio/login.php?tabela=funcionario&id={id}");
-            var jsonString = await resposta.Content.ReadAsStringAsync();
+                var resposta = await httpClient.GetAsync($"http://localhost/Portfolio/login.php?tabela=funcionario&id={id}");
+                var jsonString = await resposta.Content.ReadAsStringAsync();
 
-            ChamarFun jason = JsonConvert.DeserializeObject<ChamarFun>(jsonString);
+                ChamarFun jason = JsonConvert.DeserializeObject<ChamarFun>(jsonString);
 
-            return jason;
+                return jason;
 
+            }
         }
 
         public async Task<DataTable> Integra()
         {
-            string connectionString = "Server=127.0.0.1;Port=3306;Database=alfapdv;User ID=alfamaq;Password=29814608;SslMode=None;";
+            
             DataTable dataTable = new DataTable();
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))

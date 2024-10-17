@@ -145,10 +145,8 @@ namespace AlfaPdv.PDV
                 {
                     double.TryParse(row.Cells["Preco"].Value.ToString(), out double preco);
 
-                    
-                    total += preco;
-                    
 
+                    total += preco;
 
                 }
             }
@@ -231,5 +229,7 @@ namespace AlfaPdv.PDV
             parentPanel.Controls.Add(form);
             form.Show();
         }
+
+
     }
 }

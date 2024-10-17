@@ -46,7 +46,7 @@ namespace AlfaPdv
                 string senha = txtB3.Text;
 
                 FunServices funServices = new FunServices();
-                ChamarFun existeFun = await funServices.Integracao(id);
+                ChamarFun existeFun = await funServices.Integracao(id,senha);
 
                 string senhas = existeFun.Senha;
 
