@@ -20,21 +20,35 @@ namespace AlfaPdv.Services
     {
         private static readonly HttpClient httpClient = new HttpClient();
         public string connectionString = "Server=127.0.0.1;Port=3306;Database=alfapdv;User ID=alfamaq;Password=29814608;SslMode=None;";
-        public async Task<ChamarFun> Integracao(int id,string senha)
+        public async Task<VerFun>Integracao(int id,string senha)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                using (MySqlCommand cmd = new MySqlCommand("SELECT funId, funSenha FROM funcionario WHERE funId = @id AND funSenha = @senha)"))
+                using (MySqlCommand cmd = new MySqlCommand("SELECT funId, funSenha FROM funcionario WHERE funId = @id AND funSenha = @senha", conn))
                 {
+                    await conn.OpenAsync();
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@senha", senha);
+
+                    using (MySqlDataReader reader = (MySqlDataReader)await cmd.ExecuteReaderAsync())
+                    {
+                        if (reader.Read())
+                        {
+                            VerFun verfun = new VerFun {
+                                Id = Convert.ToInt32(reader["funId"]),
+                                Senha = reader["funSenha"] != DBNull.Value ? reader["funSenha"].ToString() : null
+
+                            };
+                            await conn.CloseAsync();
+                            return verfun;
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
                 }
-
-                var resposta = await httpClient.GetAsync($"http://localhost/Portfolio/login.php?tabela=funcionario&id={id}");
-                var jsonString = await resposta.Content.ReadAsStringAsync();
-
-                ChamarFun jason = JsonConvert.DeserializeObject<ChamarFun>(jsonString);
-
-                return jason;
-
+      
             }
         }
 
