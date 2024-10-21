@@ -42,17 +42,28 @@ namespace AlfaPdv
             try
             {
                 string codigo = txtB1.Text;
-                int id = Convert.ToInt32(codigo);
+                if (!int.TryParse(codigo, out int id))
+                {
+                    MessageBox.Show("ID inválido.");
+                    return;
+                }
+
                 string senha = txtB3.Text;
 
                 FunServices funServices = new FunServices();
-                ChamarFun existeFun = await funServices.Integracao(id,senha);
+                VerFun existeFun = await funServices.Integracao(id, senha);
+
+                if (existeFun == null)
+                {
+                    MessageBox.Show("Usuário não encontrado.");
+                    return;
+                }
 
                 string senhas = existeFun.Senha;
 
-                if (senha != senhas)
+                if (senha.Trim() != senhas?.Trim())
                 {
-                    MessageBox.Show($"Senha Incorreta");
+                    MessageBox.Show("Senha Incorreta");
                 }
                 else
                 {
@@ -60,13 +71,13 @@ namespace AlfaPdv
                     formInicio.Show();
                     this.Hide();
                 }
-
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Erro: " + ex.Message);
+                MessageBox.Show("Erro: " + ex.Message);
             }
         }
+
 
     }
 }
