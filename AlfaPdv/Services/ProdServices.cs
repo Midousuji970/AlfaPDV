@@ -1,4 +1,5 @@
 ﻿using AlfaPdv.Classes;
+using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -20,6 +21,17 @@ namespace AlfaPdv.Services
 
             // Retornamos o primeiro item da lista, assumindo que o filtro de ID na API funciona corretamente
             return produtos?.FirstOrDefault();
+        }
+        public async Task<VerProd> BuscarProduto2(int id)
+        {
+            conexao conf = new conexao();
+            string conecta = conf.ConexaoBD;
+
+            using (MySqlConnection con = new MySqlConnection(conecta))
+            {
+                using (MySqlCommand cmd = new MySqlCommand("SELECT ")) { }
+            }
+                return null;
         }
 
         public async Task<List<VerProd>> Produ()

@@ -37,7 +37,6 @@ namespace AlfaPdv.Services
                             VerFun verfun = new VerFun {
                                 Id = Convert.ToInt32(reader["funId"]),
                                 Senha = reader["funSenha"] != DBNull.Value ? reader["funSenha"].ToString() : null
-
                             };
                             await conn.CloseAsync();
                             return verfun;
@@ -48,7 +47,6 @@ namespace AlfaPdv.Services
                         }
                     }
                 }
-      
             }
         }
 
