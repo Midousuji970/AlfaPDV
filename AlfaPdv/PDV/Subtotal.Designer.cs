@@ -92,7 +92,7 @@
             // 
             // btnCanItem
             // 
-            btnCanItem.Location = new Point(104, 364);
+            btnCanItem.Location = new Point(17, 546);
             btnCanItem.Name = "btnCanItem";
             btnCanItem.Size = new Size(66, 59);
             btnCanItem.TabIndex = 10;
