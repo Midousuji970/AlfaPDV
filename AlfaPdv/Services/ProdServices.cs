@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -11,7 +12,7 @@ namespace AlfaPdv.Services
     {
         private static readonly HttpClient httpClient = new HttpClient();
 
-        public async Task<VerProd> BuscarProduto(int id)
+        public async Task<VerProd> BuscarProduto3(int id)
         {
             var resposta = await httpClient.GetAsync($"http://localhost/Portfolio/produto.php?id={id}");
             var jsonString = await resposta.Content.ReadAsStringAsync();
@@ -22,17 +23,42 @@ namespace AlfaPdv.Services
             // Retornamos o primeiro item da lista, assumindo que o filtro de ID na API funciona corretamente
             return produtos?.FirstOrDefault();
         }
-        public async Task<VerProd> BuscarProduto2(int id)
+        public async Task<VerProd> BuscarProduto(int id)
         {
             conexao conf = new conexao();
             string conecta = conf.ConexaoBD;
 
             using (MySqlConnection con = new MySqlConnection(conecta))
             {
-                using (MySqlCommand cmd = new MySqlCommand("SELECT ")) { }
+                await con.OpenAsync();
+
+                using (MySqlCommand cmd = new MySqlCommand("SELECT prodid, proddescri, prodpre FROM produto WHERE prodid = @id", con))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    using (DbDataReader reader = await cmd.ExecuteReaderAsync())
+                    {
+                        if (reader.Read())
+                        {
+                            VerProd verProd = new VerProd
+                            {
+                                Id = Convert.ToInt32(reader["prodid"]),
+                                Nome = reader["proddescri"]?.ToString(),
+                                Preco = reader["prodpre"] != DBNull.Value ? Convert.ToSingle(reader["prodpre"]).ToString("F2") : null
+                            };
+
+                            return verProd;
+                        }
+                        else
+                        {
+                            // Nenhum registro encontrado
+                            return null;
+                        }
+                    }
+                }
             }
-                return null;
         }
+
 
         public async Task<List<VerProd>> Produ()
         {
