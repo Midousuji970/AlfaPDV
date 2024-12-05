@@ -49,12 +49,12 @@
             dgvFun.AllowUserToResizeColumns = false;
             dgvFun.AllowUserToResizeRows = false;
             dgvFun.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvFun.BackgroundColor = Color.FromArgb(46, 51, 73);
+            dgvFun.BackgroundColor = Color.FromArgb(54, 63, 84);
             dgvFun.BorderStyle = BorderStyle.None;
             dgvFun.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(46, 51, 73);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(80, 56, 80);
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -106,7 +106,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Arial", 36F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(46, 50);
+            label1.Location = new Point(59, 43);
             label1.Name = "label1";
             label1.Size = new Size(551, 55);
             label1.TabIndex = 10;
@@ -142,8 +142,10 @@
             // 
             // pnlCadFun
             // 
+            pnlCadFun.BackColor = Color.FromArgb(54, 63, 84);
             pnlCadFun.BorderStyle = BorderStyle.FixedSingle;
             pnlCadFun.Controls.Add(btnFunAdi);
+            pnlCadFun.Controls.Add(label1);
             pnlCadFun.Controls.Add(btnFunEra);
             pnlCadFun.Controls.Add(btnFunAlt);
             pnlCadFun.Dock = DockStyle.Fill;
@@ -161,7 +163,6 @@
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(1264, 681);
             Controls.Add(dgvFun);
-            Controls.Add(label1);
             Controls.Add(btnVoltaIni);
             Controls.Add(comboBox1);
             Controls.Add(textBox1);
@@ -170,6 +171,7 @@
             Text = "Produto";
             ((System.ComponentModel.ISupportInitialize)dgvFun).EndInit();
             pnlCadFun.ResumeLayout(false);
+            pnlCadFun.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }

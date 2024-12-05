@@ -31,22 +31,13 @@
             panel7 = new Panel();
             label1 = new Label();
             dgvPes = new DataGridView();
-            btnCanItem = new Button();
-            button2 = new Button();
-            btnFimVenda = new Button();
-            button5 = new Button();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             lbTotal = new Label();
             label6 = new Label();
-            btnFimSessao = new Button();
-            button6 = new Button();
-            button7 = new Button();
-            button8 = new Button();
             pnlSub = new Panel();
-            panel4 = new Panel();
-            tableLayoutPanel1 = new TableLayoutPanel();
+            pnlPdvSubTotal = new Panel();
             panel1 = new Panel();
             panel3 = new Panel();
             panel5 = new Panel();
@@ -55,8 +46,6 @@
             mtxtPes = new MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)dgvPes).BeginInit();
             pnlSub.SuspendLayout();
-            panel4.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -95,62 +84,6 @@
             dgvPes.Size = new Size(906, 483);
             dgvPes.TabIndex = 9;
             // 
-            // btnCanItem
-            // 
-            btnCanItem.BackColor = Color.FromArgb(54, 63, 84);
-            btnCanItem.Dock = DockStyle.Fill;
-            btnCanItem.FlatStyle = FlatStyle.Flat;
-            btnCanItem.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCanItem.ForeColor = Color.White;
-            btnCanItem.Location = new Point(3, 481);
-            btnCanItem.Name = "btnCanItem";
-            btnCanItem.Size = new Size(73, 81);
-            btnCanItem.TabIndex = 10;
-            btnCanItem.Text = "Cancelar Item\r\n(F1)";
-            btnCanItem.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(54, 63, 84);
-            button2.Dock = DockStyle.Fill;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(82, 481);
-            button2.Name = "button2";
-            button2.Size = new Size(73, 81);
-            button2.TabIndex = 11;
-            button2.Text = "Consultar Produto\r\n(F2)";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // btnFimVenda
-            // 
-            btnFimVenda.BackColor = Color.FromArgb(54, 63, 84);
-            btnFimVenda.Dock = DockStyle.Fill;
-            btnFimVenda.FlatStyle = FlatStyle.Flat;
-            btnFimVenda.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnFimVenda.ForeColor = Color.White;
-            btnFimVenda.Location = new Point(240, 481);
-            btnFimVenda.Name = "btnFimVenda";
-            btnFimVenda.Size = new Size(76, 81);
-            btnFimVenda.TabIndex = 12;
-            btnFimVenda.Text = "Finalizar Venda\r\n(F4)";
-            btnFimVenda.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            button5.BackColor = Color.FromArgb(54, 63, 84);
-            button5.Dock = DockStyle.Fill;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button5.ForeColor = Color.White;
-            button5.Location = new Point(161, 481);
-            button5.Name = "button5";
-            button5.Size = new Size(73, 81);
-            button5.TabIndex = 14;
-            button5.Text = "Adicionar CPF\r\n(F3)";
-            button5.UseVisualStyleBackColor = false;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -186,6 +119,7 @@
             // 
             // lbTotal
             // 
+            lbTotal.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lbTotal.AutoSize = true;
             lbTotal.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point);
             lbTotal.Location = new Point(479, 608);
@@ -206,67 +140,10 @@
             label6.TabIndex = 19;
             label6.Text = "Preço:";
             // 
-            // btnFimSessao
-            // 
-            btnFimSessao.BackColor = Color.FromArgb(54, 63, 84);
-            btnFimSessao.Dock = DockStyle.Fill;
-            btnFimSessao.FlatStyle = FlatStyle.Flat;
-            btnFimSessao.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnFimSessao.ForeColor = Color.White;
-            btnFimSessao.Location = new Point(240, 568);
-            btnFimSessao.Name = "btnFimSessao";
-            btnFimSessao.Size = new Size(76, 82);
-            btnFimSessao.TabIndex = 20;
-            btnFimSessao.Text = "Finalizar Sessão\r\n(F8)";
-            btnFimSessao.UseVisualStyleBackColor = false;
-            btnFimSessao.Click += btnFimSessao_Click;
-            // 
-            // button6
-            // 
-            button6.BackColor = Color.FromArgb(54, 63, 84);
-            button6.Dock = DockStyle.Fill;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button6.ForeColor = Color.White;
-            button6.Location = new Point(3, 568);
-            button6.Name = "button6";
-            button6.Size = new Size(73, 82);
-            button6.TabIndex = 21;
-            button6.Text = "Consultar Pagamento(F4)";
-            button6.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            button7.BackColor = Color.FromArgb(54, 63, 84);
-            button7.Dock = DockStyle.Fill;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button7.ForeColor = Color.White;
-            button7.Location = new Point(161, 568);
-            button7.Name = "button7";
-            button7.Size = new Size(73, 82);
-            button7.TabIndex = 22;
-            button7.Text = "Resumo Diário(F7)";
-            button7.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            button8.BackColor = Color.FromArgb(54, 63, 84);
-            button8.Dock = DockStyle.Fill;
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button8.ForeColor = Color.White;
-            button8.Location = new Point(82, 568);
-            button8.Name = "button8";
-            button8.Size = new Size(73, 82);
-            button8.TabIndex = 23;
-            button8.Text = "Troca de Operador\n(F6)";
-            button8.UseVisualStyleBackColor = false;
-            // 
             // pnlSub
             // 
             pnlSub.BackColor = Color.FromArgb(200, 212, 225);
-            pnlSub.Controls.Add(panel4);
+            pnlSub.Controls.Add(pnlPdvSubTotal);
             pnlSub.Controls.Add(panel1);
             pnlSub.Controls.Add(panel5);
             pnlSub.Controls.Add(panel2);
@@ -282,40 +159,13 @@
             pnlSub.Size = new Size(1264, 681);
             pnlSub.TabIndex = 28;
             // 
-            // panel4
+            // pnlPdvSubTotal
             // 
-            panel4.Controls.Add(tableLayoutPanel1);
-            panel4.Dock = DockStyle.Left;
-            panel4.Location = new Point(11, 14);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(319, 653);
-            panel4.TabIndex = 24;
-            // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.BackColor = Color.FromArgb(200, 212, 225);
-            tableLayoutPanel1.ColumnCount = 4;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.Controls.Add(btnFimSessao, 3, 2);
-            tableLayoutPanel1.Controls.Add(btnCanItem, 0, 1);
-            tableLayoutPanel1.Controls.Add(btnFimVenda, 3, 1);
-            tableLayoutPanel1.Controls.Add(button7, 2, 2);
-            tableLayoutPanel1.Controls.Add(button2, 1, 1);
-            tableLayoutPanel1.Controls.Add(button5, 2, 1);
-            tableLayoutPanel1.Controls.Add(button8, 1, 2);
-            tableLayoutPanel1.Controls.Add(button6, 0, 2);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 73.211586F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 13.394206F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 13.394206F));
-            tableLayoutPanel1.Size = new Size(319, 653);
-            tableLayoutPanel1.TabIndex = 24;
+            pnlPdvSubTotal.Dock = DockStyle.Left;
+            pnlPdvSubTotal.Location = new Point(11, 14);
+            pnlPdvSubTotal.Name = "pnlPdvSubTotal";
+            pnlPdvSubTotal.Size = new Size(319, 653);
+            pnlPdvSubTotal.TabIndex = 24;
             // 
             // panel1
             // 
@@ -382,8 +232,6 @@
             ((System.ComponentModel.ISupportInitialize)dgvPes).EndInit();
             pnlSub.ResumeLayout(false);
             pnlSub.PerformLayout();
-            panel4.ResumeLayout(false);
-            tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ResumeLayout(false);
@@ -415,7 +263,7 @@
         private Panel panel5;
         private Panel panel1;
         private Panel panel3;
-        private Panel panel4;
+        private Panel pnlPdvSubTotal;
         private TableLayoutPanel tableLayoutPanel1;
     }
 }

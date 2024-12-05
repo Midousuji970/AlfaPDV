@@ -52,7 +52,11 @@
             txtBoxEndNum = new TextBox();
             label12 = new Label();
             pnlItemFun = new Panel();
+            panel1 = new Panel();
+            tableLayoutPanel1 = new TableLayoutPanel();
             pnlItemFun.SuspendLayout();
+            panel1.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnVolCadFun
@@ -67,12 +71,18 @@
             // 
             // btnFunOk
             // 
-            btnFunOk.Location = new Point(355, 437);
+            btnFunOk.BackColor = Color.FromArgb(54, 63, 84);
+            btnFunOk.Dock = DockStyle.Fill;
+            btnFunOk.FlatAppearance.BorderColor = Color.Black;
+            btnFunOk.FlatAppearance.BorderSize = 5;
+            btnFunOk.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnFunOk.ForeColor = Color.White;
+            btnFunOk.Location = new Point(283, 18);
             btnFunOk.Name = "btnFunOk";
-            btnFunOk.Size = new Size(546, 42);
+            btnFunOk.Size = new Size(696, 62);
             btnFunOk.TabIndex = 15;
             btnFunOk.Text = "Gravar";
-            btnFunOk.UseVisualStyleBackColor = true;
+            btnFunOk.UseVisualStyleBackColor = false;
             btnFunOk.Click += btnFunOk_Click;
             // 
             // label1
@@ -81,7 +91,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Arial", 36F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(65, 93);
+            label1.Location = new Point(79, 91);
             label1.Name = "label1";
             label1.Size = new Size(551, 55);
             label1.TabIndex = 19;
@@ -154,7 +164,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(907, 317);
+            label7.Location = new Point(906, 317);
             label7.Name = "label7";
             label7.Size = new Size(145, 23);
             label7.TabIndex = 31;
@@ -270,17 +280,52 @@
             // 
             // pnlItemFun
             // 
+            pnlItemFun.BackColor = Color.FromArgb(54, 63, 84);
+            pnlItemFun.Controls.Add(panel1);
             pnlItemFun.Controls.Add(label12);
-            pnlItemFun.Controls.Add(btnFunOk);
             pnlItemFun.Controls.Add(txtBoxEnd);
+            pnlItemFun.Controls.Add(label9);
+            pnlItemFun.Controls.Add(label7);
+            pnlItemFun.Controls.Add(label10);
             pnlItemFun.Controls.Add(txtBoxCep);
             pnlItemFun.Controls.Add(label6);
+            pnlItemFun.Controls.Add(label8);
             pnlItemFun.Controls.Add(label11);
+            pnlItemFun.Controls.Add(label3);
+            pnlItemFun.Controls.Add(label1);
+            pnlItemFun.Controls.Add(label2);
+            pnlItemFun.Controls.Add(label4);
             pnlItemFun.Dock = DockStyle.Fill;
             pnlItemFun.Location = new Point(0, 0);
             pnlItemFun.Name = "pnlItemFun";
             pnlItemFun.Size = new Size(1264, 681);
             pnlItemFun.TabIndex = 47;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(tableLayoutPanel1);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 581);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1264, 100);
+            panel1.TabIndex = 45;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.22222F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 55.5555573F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.2222214F));
+            tableLayoutPanel1.Controls.Add(btnFunOk, 1, 1);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 15.1515169F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 68.18181F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel1.Size = new Size(1264, 100);
+            tableLayoutPanel1.TabIndex = 16;
             // 
             // ItemFun
             // 
@@ -291,25 +336,19 @@
             Controls.Add(txtBoxEndNum);
             Controls.Add(txtBoxMail);
             Controls.Add(txtBoxTele);
-            Controls.Add(label10);
-            Controls.Add(label9);
-            Controls.Add(label8);
             Controls.Add(txtBoxCargo);
-            Controls.Add(label7);
             Controls.Add(txtBoxDate);
             Controls.Add(txtBoxCpf);
-            Controls.Add(label4);
-            Controls.Add(label3);
             Controls.Add(txtBoxNome);
-            Controls.Add(label2);
             Controls.Add(txtBoxFun);
-            Controls.Add(label1);
             Controls.Add(btnVolCadFun);
             Controls.Add(pnlItemFun);
             Name = "ItemFun";
             Text = "ItemProd";
             pnlItemFun.ResumeLayout(false);
             pnlItemFun.PerformLayout();
+            panel1.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -340,5 +379,7 @@
         private TextBox txtBoxEndNum;
         private Label label12;
         private Panel pnlItemFun;
+        private Panel panel1;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

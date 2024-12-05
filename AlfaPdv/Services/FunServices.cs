@@ -71,18 +71,8 @@ namespace AlfaPdv.Services
 
         }
 
-
-        // public async Task<FunCompleto> FunFullIntegra(int id)
-        // {
-
-        //    var vera = await httpClient.GetAsync($"http://localhost/Portfolio/login.php?tabela=funcionario&id={id}");
-        //   var jsonFunFull = await vera.Content.ReadAsStringAsync();
-
-        //            FunCompleto full = JsonConvert.DeserializeObject<FunCompleto>(jsonFunFull);
-        //          return full;
-
-        //      }
-        public async Task<FunCompleto> FunFullIntegra(int id)
+        public async Task<FunCompleto> FunFullAdicio() { return null; }
+        public async Task<FunCompleto> FunFullIntegra(int id) // esse comando puxa todas as infos
         {
             string connectionString = "Server=127.0.0.1;Port=3306;Database=alfapdv;User ID=alfamaq;Password=29814608;SslMode=None;";
 
@@ -105,7 +95,7 @@ namespace AlfaPdv.Services
                                 // Mapeie os campos do banco para as propriedades do objeto
                                 funId = Convert.ToInt32(reader["funId"]),
                                 funNome = reader["funNome"] != DBNull.Value ? reader["funNome"].ToString() : null,
-                                funCpf = reader["funCpf"] != DBNull.Value ? Convert.ToInt32(reader["funCpf"]) : 0,
+                                funCpf = reader["funCpf"] != DBNull.Value ? reader["funCpf"].ToString() : null,
                                 funSenha = reader["funSenha"] != DBNull.Value ? reader["funSenha"].ToString() : null,
                                 funEnd = reader["funEnd"] != DBNull.Value ? reader["funEnd"].ToString() : null,
                                 funEndNum = reader["funEndNum"] != DBNull.Value ? Convert.ToInt32(reader["funEndNum"]) : 0,
