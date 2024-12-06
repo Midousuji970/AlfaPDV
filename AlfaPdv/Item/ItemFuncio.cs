@@ -150,19 +150,19 @@ namespace AlfaPdv.Item
             FunCompleto novoFun = new FunCompleto
             {
                 funId = ids,
+                funNome = txtBoxNome.Text,
+                funCargo = txtBoxCargo.Text,
+                funEnd = txtBoxEnd.Text,
+                FunCep= txtBoxCep.Text,
+                var datas = txtBoxDate.Text,
+                var cpf = txtBoxCpf.Text,
+                funMail = txtBoxMail.Text,
+                funTele = txtBoxTele.Text,
+                funEndNum = txtBoxEndNum.Text,
+                funSenha = ""
 
             };
-            var id = ids;
-            var nome = txtBoxNome.Text;
-            var cargo = txtBoxCargo.Text;
-            var ende = txtBoxEnd.Text;
-            var cep = txtBoxCep.Text;
-            var datas = txtBoxDate.Text;
-            var cpf = txtBoxCpf.Text;
-            var email = txtBoxMail.Text;
-            var tel = txtBoxTele.Text;
-            var numero = txtBoxEndNum.Text;
-            string senha = "";
+            
 
 
             
