@@ -30,10 +30,10 @@ namespace AlfaPdv.PDV
 
         private void InitializeButton()
         {
-            btnFimSessao.Click += new EventHandler(btnFimSessao_Click);
+            //btnFimSessao.Click += new EventHandler(btnFimSessao_Click);
             this.Shown += new EventHandler(Form_Shown);
             mtxtPes.KeyPress += new KeyPressEventHandler(mtxtPes_KeyPress);
-            btnFimVenda.Click += new EventHandler(btnFimVenda_Click);
+            //btnFimVenda.Click += new EventHandler(btnFimVenda_Click);
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(Subtotal_KeyDown);
         }
@@ -126,7 +126,8 @@ namespace AlfaPdv.PDV
             if (double.TryParse(produto.Preco, out double preco))
             {
                 double precoTotal = preco * quantidade;
-                dgvPes.Rows.Add(produto.Nome, quantidade, precoTotal.ToString("F2"));
+                string precostring = precoTotal.ToString("F2");
+                dgvPes.Columns.Add(produto.Nome, quantidade);
                 AtualizarTotal();
             }
             else
@@ -139,7 +140,7 @@ namespace AlfaPdv.PDV
         {
             double total = 0;
 
-            foreach (DataGridViewRow row in dgvPes.Rows)
+            foreach (DataGridViewRow row in dgvPes.Columns)
             {
                 if (row.Cells["Preco"].Value != null)
                 {
@@ -172,7 +173,9 @@ namespace AlfaPdv.PDV
                     string nome = dados[0].Trim();
                     int quantidade = int.Parse(dados[1].Trim());
                     double preco = double.Parse(dados[2].Trim());
-                    dgvPes.Rows.Add(nome, quantidade, preco.ToString("F2"));
+                    ListViewItem item = new ListViewItem(nome);
+                    item.SubItems.Add(quantidade.ToString());
+                    item.SubItems.Add(preco.ToString());
                 }
             }
             AtualizarTotal();
@@ -190,16 +193,17 @@ namespace AlfaPdv.PDV
 
         private void FinalizarVenda()
         {
-            if (dgvPes.Rows.Count > 0)
+            if (dgvPes.Items.Count > 0)
             {
                 List<string> produtos = new List<string>();
 
-                foreach (DataGridViewRow row in dgvPes.Rows)
+                foreach (ListViewItem item in dgvPes.Items)
                 {
-                    if (row.Cells["Nome"].Value != null && row.Cells["Quantidade"].Value != null && row.Cells["Preco"].Value != null)
-                    {
-                        produtos.Add($"{row.Cells["Nome"].Value} - {row.Cells["Quantidade"].Value} - {row.Cells["Preco"].Value}");
-                    }
+                    string nome = item.SubItems[0].Text; // Nome está na primeira coluna
+                    string quantidade = item.SubItems[1].Text; // Quantidade está na segunda coluna
+                    string preco = item.SubItems[2].Text; // Preço está na terceira coluna
+
+                    produtos.Add($"{nome} - {quantidade} - {preco}");
                 }
 
                 Finalizacao finalizacaoForm = new Finalizacao(produtos, lbTotal.Text);
@@ -229,7 +233,6 @@ namespace AlfaPdv.PDV
             parentPanel.Controls.Add(form);
             form.Show();
         }
-
 
     }
 }

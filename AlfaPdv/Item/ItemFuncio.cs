@@ -101,7 +101,7 @@ namespace AlfaPdv.Item
             }
             if(Envio.Verifica == 0)
             {
-                await CriaCad(atuId);
+                //await CriaCad(atuId);
             }
         }
         private async Task AtualizarCad(int ids)
@@ -145,54 +145,66 @@ namespace AlfaPdv.Item
             }
         }
 
-        private async Task CriaCad(int ids)
-        {
-            FunCompleto novoFun = new FunCompleto
-            {
-                funId = ids,
-                funNome = txtBoxNome.Text,
-                funCargo = txtBoxCargo.Text,
-                funEnd = txtBoxEnd.Text,
-                FunCep= txtBoxCep.Text,
-                var datas = txtBoxDate.Text,
-                var cpf = txtBoxCpf.Text,
-                funMail = txtBoxMail.Text,
-                funTele = txtBoxTele.Text,
-                funEndNum = txtBoxEndNum.Text,
-                funSenha = ""
+        //private async Task<FunCompleto> CriaCad(FunCompleto fun)
+        //{
+        //    try
+        //    {
+        //        // Preenchendo o objeto FunCompleto com os dados do formulário
+        //        fun.funId = 1; // Certifique-se de que o ID seja fornecido
+        //        fun.funNome = txtBoxNome.Text;
+        //        fun.funCargo = 1;
+        //        fun.funEnd = txtBoxEnd.Text;
+        //        fun.funDataEnt = 1; // Verifique o formato da data
+        //        fun.funCpf = txtBoxCpf.Text;
+        //        fun.funMail = txtBoxMail.Text;
+        //        fun.funTele = 1;
+        //        fun.funEndNum = 1;
+        //        fun.funSenha = string.Empty; // Defina uma senha inicial, se necessário
 
-            };
-            
+        //        // Inicializando o serviço
+        //        FunServices funServices = new FunServices();
 
+        //        // Chamando o método Post para criar o funcionário
+        //        var response = await funServices.Post("");
 
-            
-            FunServices funServices = new FunServices();
-            
+        //        // Tratando a resposta
+        //        if (response != null) // Verifique se há sucesso na criação
+        //        {
+        //            // Ocultar controles desnecessários
+        //            foreach (Control control in this.Controls)
+        //            {
+        //                if (control != pnlItemFun)
+        //                {
+        //                    control.Visible = false;
+        //                }
+        //            }
 
-            //try
-            //{
-            //    var response = await funServices.Post(request);
-            //    foreach (Control control in this.Controls)
-            //    {
-            //        if (control != pnlItemFun)
-            //        {
-            //            control.Visible = false;
-            //        }
-            //    }
+        //            // Limpar e carregar o formulário de funcionário
+        //            pnlItemFun.Controls.Clear();
+        //            AlfaPdv.Funcionario funcionarioForm = new AlfaPdv.Funcionario
+        //            {
+        //                TopLevel = false,
+        //                FormBorderStyle = FormBorderStyle.None,
+        //                Dock = DockStyle.Fill
+        //            };
+        //            pnlItemFun.Controls.Add(funcionarioForm);
+        //            funcionarioForm.Show();
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Erro ao criar funcionário. Verifique os dados e tente novamente.");
+        //        }
 
-            //    pnlItemFun.Controls.Clear();
-            //    AlfaPdv.Funcionario FuncionarioForm = new AlfaPdv.Funcionario();
-            //    FuncionarioForm.TopLevel = false;
-            //    FuncionarioForm.FormBorderStyle = FormBorderStyle.None;
-            //    FuncionarioForm.Dock = DockStyle.Fill;
-            //    pnlItemFun.Controls.Add(FuncionarioForm);
-            //    FuncionarioForm.Show();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show($"Erro ao criar funcionário: {ex.Message}");
-            //}
-        }
+        //        return fun;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        // Captura e exibe erros
+        //        MessageBox.Show($"Erro ao criar funcionário: {ex.Message}");
+        //        return null;
+        //    }
+        //}
+
 
         static void AdicionarCampos(Dictionary<string, object> campos, JObject objeto)
         {
