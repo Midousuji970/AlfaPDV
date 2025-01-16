@@ -30,13 +30,13 @@
         {
             panel7 = new Panel();
             label1 = new Label();
-            dgvPes = new DataGridView();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             lbTotal = new Label();
             label6 = new Label();
             pnlSub = new Panel();
+            dgvPes = new ListView();
             pnlPdvSubTotal = new Panel();
             panel1 = new Panel();
             panel3 = new Panel();
@@ -44,7 +44,6 @@
             panel2 = new Panel();
             panel8 = new Panel();
             mtxtPes = new MaskedTextBox();
-            ((System.ComponentModel.ISupportInitialize)dgvPes).BeginInit();
             pnlSub.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -70,19 +69,6 @@
             label1.Size = new Size(209, 29);
             label1.TabIndex = 7;
             label1.Text = "Digite o Produto:";
-            // 
-            // dgvPes
-            // 
-            dgvPes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvPes.BackgroundColor = SystemColors.Control;
-            dgvPes.BorderStyle = BorderStyle.None;
-            dgvPes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPes.Location = new Point(336, 122);
-            dgvPes.Name = "dgvPes";
-            dgvPes.ReadOnly = true;
-            dgvPes.RowTemplate.Height = 25;
-            dgvPes.Size = new Size(906, 483);
-            dgvPes.TabIndex = 9;
             // 
             // label2
             // 
@@ -143,12 +129,12 @@
             // pnlSub
             // 
             pnlSub.BackColor = Color.FromArgb(200, 212, 225);
+            pnlSub.Controls.Add(dgvPes);
             pnlSub.Controls.Add(pnlPdvSubTotal);
             pnlSub.Controls.Add(panel1);
             pnlSub.Controls.Add(panel5);
             pnlSub.Controls.Add(panel2);
             pnlSub.Controls.Add(mtxtPes);
-            pnlSub.Controls.Add(dgvPes);
             pnlSub.Controls.Add(label3);
             pnlSub.Controls.Add(label4);
             pnlSub.Controls.Add(label6);
@@ -158,6 +144,14 @@
             pnlSub.Name = "pnlSub";
             pnlSub.Size = new Size(1264, 681);
             pnlSub.TabIndex = 28;
+            // 
+            // dgvPes
+            // 
+            dgvPes.Location = new Point(336, 122);
+            dgvPes.Name = "dgvPes";
+            dgvPes.Size = new Size(906, 481);
+            dgvPes.TabIndex = 25;
+            dgvPes.UseCompatibleStateImageBehavior = false;
             // 
             // pnlPdvSubTotal
             // 
@@ -229,7 +223,6 @@
             Controls.Add(panel7);
             Controls.Add(pnlSub);
             Name = "Subtotal";
-            ((System.ComponentModel.ISupportInitialize)dgvPes).EndInit();
             pnlSub.ResumeLayout(false);
             pnlSub.PerformLayout();
             panel1.ResumeLayout(false);
@@ -242,7 +235,6 @@
         private Panel panel7;
         private Label label1;
         private TextBox txtPesq;
-        private DataGridView dgvPes;
         private Button btnCanItem;
         private Button button2;
         private Button btnFimVenda;
@@ -265,5 +257,6 @@
         private Panel panel3;
         private Panel pnlPdvSubTotal;
         private TableLayoutPanel tableLayoutPanel1;
+        private ListView dgvPes;
     }
 }

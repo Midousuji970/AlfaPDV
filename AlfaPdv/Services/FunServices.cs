@@ -71,18 +71,18 @@ namespace AlfaPdv.Services
 
         }
 
-        public async Task<FunCompleto> FunFullAdicio() {
-            string connectionString = "Server=127.0.0.1;Port=3306;Database=alfapdv;User ID=alfamaq;Password=29814608;SslMode=None;";
-            using (MySqlConnection connection = new MySqlConnection(connectionString)) {
-                await connection.OpenAsync();
-                using(MySqlCommand comando = new MySqlCommand("INSERT INTO funcionario (funId,funNome,funCpf,funSenha,funEnd,funEndNum,funTele,funCargo,funMail,funDataEnt,funDataSai,funAtive) " +
-                    "values (@id, @nome, @cpf, @senha, @endereco, @numero, @telefone, @cargo, @email, @dataEn, @dataSai, @atividade)"))
-                {
+        //public async Task<FunCompleto> FunFullAdicio() {
+        //    string connectionString = "Server=127.0.0.1;Port=3306;Database=alfapdv;User ID=alfamaq;Password=29814608;SslMode=None;";
+        //    using (MySqlConnection connection = new MySqlConnection(connectionString)) {
+        //        await connection.OpenAsync();
+        //        using(MySqlCommand comando = new MySqlCommand("INSERT INTO funcionario (funId,funNome,funCpf,funSenha,funEnd,funEndNum,funTele,funCargo,funMail,funDataEnt,funDataSai,funAtive) " +
+        //            "values (@id, @nome, @cpf, @senha, @endereco, @numero, @telefone, @cargo, @email, @dataEn, @dataSai, @atividade)"))
+        //        {
 
-                }
+        //        }
             
-            }
-        }
+        //    }
+        //}
         public async Task<FunCompleto> FunFullIntegra(int id) // esse comando puxa todas as infos
         {
             string connectionString = "Server=127.0.0.1;Port=3306;Database=alfapdv;User ID=alfamaq;Password=29814608;SslMode=None;";
