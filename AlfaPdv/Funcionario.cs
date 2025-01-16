@@ -98,12 +98,11 @@ namespace AlfaPdv
             dgvFun.Rows[ultimaLinha].Selected = true;
             if (dgvFun.SelectedRows.Count > 0)
             {
-
                 // Obtém a última linha selecionada
                 DataGridViewRow selectedRow = dgvFun.SelectedRows[dgvFun.SelectedRows.Count - 1];
 
                 // Obtém os valores das células da última linha
-                int ultId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                int ultId = Convert.ToInt32(selectedRow.Cells["funId"].Value);
                 int newId = ultId + 1;
                 Envio.Verifica = 0;
 

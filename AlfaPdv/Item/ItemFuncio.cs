@@ -117,47 +117,12 @@ namespace AlfaPdv.Item
             var tel = txtBoxTele.Text;
             var numero = txtBoxEndNum.Text;
 
-            // Cria um objeto JSON com os campos não nulos
-            var campos = new Dictionary<string, object>
-            {
-                { "id", id },
-                { "nome", nome },
-                { "cargo", cargo },
-                { "ende", ende },
-                { "cep", cep },
-                { "cpf", cpf },
-                { "email", email },
-                { "datas", datas },
-                { "tel", tel },
-                { "numero", numero },
-            };
-
-            // Cria um objeto JSON que irá receber os campos não nulos
-            var objeto = new JObject();
-
-            // Adiciona os campos não nulos ao objeto JSON
-            AdicionarCampos(campos, objeto);
-
-            // Serializa o objeto JSON
-            var jsonBody = objeto.ToString();
-
-            // Cria um HttpRequestMessage com o JSON
-            var request = new HttpRequestMessage
-            {
-                Method = HttpMethod.Put,
-                RequestUri = new Uri("http://localhost/Portfolio/funcionario.php"),
-                Headers =
-                {
-                    { "User-Agent", "insomnia/8.6.1" },
-                },
-                Content = new StringContent(jsonBody, Encoding.UTF8, "application/json")
-            };
 
             // Chama o método Puts da classe FunServices, passando o HttpRequestMessage
             FunServices funServices = new FunServices();
             try
             {
-                var response = await funServices.Puts(request);
+                //var response = await funServices;
                 foreach (Control control in this.Controls)
                 {
                     if (control != pnlItemFun)
@@ -182,78 +147,51 @@ namespace AlfaPdv.Item
 
         private async Task CriaCad(int ids)
         {
-            var id = ids;
-            var nome = txtBoxNome.Text;
-            var cargo = txtBoxCargo.Text;
-            var ende = txtBoxEnd.Text;
-            var cep = txtBoxCep.Text;
-            var datas = txtBoxDate.Text;
-            var cpf = txtBoxCpf.Text;
-            var email = txtBoxMail.Text;
-            var tel = txtBoxTele.Text;
-            var numero = txtBoxEndNum.Text;
-            string senha = "";
-
-            // Cria um objeto JSON com os campos não nulos
-            var campos = new Dictionary<string, object>
-    {
-        { "id", id },
-        { "nome", nome },
-        { "cargo", cargo },
-        { "ende", ende },
-        { "cep", cep },
-        { "cpf", cpf },
-        { "email", email },
-        { "datas", datas },
-        { "tel", tel },
-        { "numero", numero },
-        {"senha", senha }
-    };
-            var objeto = new JObject();
-
-            // Adiciona os campos não nulos ao objeto JSON
-            AdicionarCampos(campos, objeto);
-
-            // Serializa o objeto JSON
-            var jsonBody = objeto.ToString();
-
-            // Cria um HttpRequestMessage com o JSON
-            var request = new HttpRequestMessage
+            FunCompleto novoFun = new FunCompleto
             {
-                Method = HttpMethod.Post,
-                RequestUri = new Uri("http://localhost/Portfolio/funcionario.php"),
-                Headers =
-        {
-            { "User-Agent", "insomnia/8.6.1" },
-        },
-                Content = new StringContent(jsonBody, Encoding.UTF8, "application/json")
+                funId = ids,
+                funNome = txtBoxNome.Text,
+                funCargo = txtBoxCargo.Text,
+                funEnd = txtBoxEnd.Text,
+                FunCep= txtBoxCep.Text,
+                var datas = txtBoxDate.Text,
+                var cpf = txtBoxCpf.Text,
+                funMail = txtBoxMail.Text,
+                funTele = txtBoxTele.Text,
+                funEndNum = txtBoxEndNum.Text,
+                funSenha = ""
+
             };
+            
 
-            // Chama o método Post da classe FunServices, passando o HttpRequestMessage
+
+            
             FunServices funServices = new FunServices();
-            try
-            {
-                var response = await funServices.Post(request);
-                foreach (Control control in this.Controls)
-                {
-                    if (control != pnlItemFun)
-                    {
-                        control.Visible = false;
-                    }
-                }
+            
 
-                pnlItemFun.Controls.Clear();
-                AlfaPdv.Funcionario FuncionarioForm = new AlfaPdv.Funcionario();
-                FuncionarioForm.TopLevel = false;
-                FuncionarioForm.FormBorderStyle = FormBorderStyle.None;
-                FuncionarioForm.Dock = DockStyle.Fill;
-                pnlItemFun.Controls.Add(FuncionarioForm);
-                FuncionarioForm.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao criar funcionário: {ex.Message}");
-            }
+            //try
+            //{
+            //    var response = await funServices.Post(request);
+            //    foreach (Control control in this.Controls)
+            //    {
+            //        if (control != pnlItemFun)
+            //        {
+            //            control.Visible = false;
+            //        }
+            //    }
+
+            //    pnlItemFun.Controls.Clear();
+            //    AlfaPdv.Funcionario FuncionarioForm = new AlfaPdv.Funcionario();
+            //    FuncionarioForm.TopLevel = false;
+            //    FuncionarioForm.FormBorderStyle = FormBorderStyle.None;
+            //    FuncionarioForm.Dock = DockStyle.Fill;
+            //    pnlItemFun.Controls.Add(FuncionarioForm);
+            //    FuncionarioForm.Show();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show($"Erro ao criar funcionário: {ex.Message}");
+            //}
         }
 
         static void AdicionarCampos(Dictionary<string, object> campos, JObject objeto)

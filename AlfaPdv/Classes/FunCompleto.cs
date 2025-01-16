@@ -10,7 +10,7 @@ namespace AlfaPdv.Classes
     {
     public int funId { get; set; }
     public string funNome { get; set; }
-    public int funCpf {  get; set; }
+    public string funCpf {  get; set; }
         public string funSenha { get; set; }
         public string funEnd { get; set; }
         public int funEndNum { get; set; }
