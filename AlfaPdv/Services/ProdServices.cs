@@ -10,7 +10,7 @@ namespace AlfaPdv.Services
 {
     internal class ProdServices
     {
-        private static readonly HttpClient httpClient = new HttpClient();
+        private static readonly HttpClient httpClient = new();
 
         public async Task<VerProd> BuscarProduto3(int id)
         {
@@ -25,18 +25,18 @@ namespace AlfaPdv.Services
         }
         public async Task<VerProd> BuscarProduto(int id)
         {
-            conexao conf = new conexao();
+            conexao conf = new();
             string conecta = conf.ConexaoBD;
 
-            using (MySqlConnection con = new MySqlConnection(conecta))
+            using MySqlConnection con = new(conecta);
             {
                 await con.OpenAsync();
 
-                using (MySqlCommand cmd = new MySqlCommand("SELECT prodid, proddescri, prodpre FROM produto WHERE prodid = @id", con))
+                using MySqlCommand cmd = new("SELECT prodid, proddescri, prodpre FROM produto WHERE prodid = @id", con);
                 {
                     cmd.Parameters.AddWithValue("@id", id);
 
-                    using (DbDataReader reader = await cmd.ExecuteReaderAsync())
+                    using DbDataReader reader = await cmd.ExecuteReaderAsync();
                     {
                         if (reader.Read())
                         {

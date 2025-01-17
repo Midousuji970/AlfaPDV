@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel7 = new Panel();
             label1 = new Label();
             label2 = new Label();
@@ -36,7 +38,7 @@
             lbTotal = new Label();
             label6 = new Label();
             pnlSub = new Panel();
-            dgvPes = new ListView();
+            dgvPes = new DataGridView();
             pnlPdvSubTotal = new Panel();
             panel1 = new Panel();
             panel3 = new Panel();
@@ -45,6 +47,7 @@
             panel8 = new Panel();
             mtxtPes = new MaskedTextBox();
             pnlSub.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvPes).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -147,11 +150,38 @@
             // 
             // dgvPes
             // 
+            dgvPes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvPes.BackgroundColor = Color.FromArgb(200, 212, 225);
+            dgvPes.CellBorderStyle = DataGridViewCellBorderStyle.SunkenHorizontal;
+            dgvPes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.DarkBlue;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvPes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvPes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPes.ColumnHeadersVisible = false;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(200, 212, 225);
+            dataGridViewCellStyle2.Font = new Font("Arial", 28F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(200, 212, 225);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(46, 51, 73);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvPes.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvPes.EnableHeadersVisualStyles = false;
+            dgvPes.GridColor = Color.White;
             dgvPes.Location = new Point(336, 122);
             dgvPes.Name = "dgvPes";
+            dgvPes.ReadOnly = true;
+            dgvPes.RowHeadersVisible = false;
+            dgvPes.RowTemplate.Height = 48;
             dgvPes.Size = new Size(906, 481);
             dgvPes.TabIndex = 25;
-            dgvPes.UseCompatibleStateImageBehavior = false;
+            dgvPes.ForeColor = Color.FromArgb(46, 51, 73);
             // 
             // pnlPdvSubTotal
             // 
@@ -225,6 +255,7 @@
             Name = "Subtotal";
             pnlSub.ResumeLayout(false);
             pnlSub.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvPes).EndInit();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ResumeLayout(false);
@@ -257,6 +288,6 @@
         private Panel panel3;
         private Panel pnlPdvSubTotal;
         private TableLayoutPanel tableLayoutPanel1;
-        private ListView dgvPes;
+        private DataGridView dgvPes;
     }
 }
